@@ -1,6 +1,6 @@
-import { get } from '../get'
-import { isDefined } from '../utils/is.utils'
-import addCommands from './addCommands'
+import commands from '../commands'
+import { get } from '../utils/selector.utils'
+import { addCommands } from '../utils/command.utils'
 
 export class CyDuck {
   constructor(el) {
@@ -28,56 +28,8 @@ export class CyDuck {
   getNode() {
     return this.el[0]
   }
-
-  getAttribute(attr) {
-    return this.getNode()[attr]
-  }
-
-  getAttr(attr) {
-    return this.getAttribute(attr)
-  }
-
-  getComputedStyle(prop) {
-    const styles = window.getComputedStyle(this.getNode())
-    return prop ? styles[prop] : styles
-  }
-
-  getStyle(prop) {
-    return this.getComputedStyle(prop)
-  }
-
-  getId(id) {
-    return this.getAttribute(id)
-  }
-
-  getValue() {
-    return this.getAttribute('value')
-  }
-
-  // Setters
-  eq(index) {
-    this.el = this.el.length ? [this.el[index]] : []
-    return this
-  }
-
-  first() {
-    this.eq(0)
-    return this
-  }
-
-  last() {
-    this.eq(this.el.length - 1)
-    return this
-  }
-
-  value(nextValue) {
-    if (isDefined(nextValue)) {
-      this.type(nextValue)
-    }
-    return this.getValue()
-  }
 }
 
-addCommands(CyDuck)
+addCommands(CyDuck, commands)
 
 export default CyDuck

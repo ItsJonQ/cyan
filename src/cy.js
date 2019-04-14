@@ -1,5 +1,5 @@
 import CyDuck from './cyduck/CyDuck'
-import { get, getByCy } from './get'
+import { get, getByCy } from './utils/selector.utils'
 import debug from './debug'
 
 const cy = {

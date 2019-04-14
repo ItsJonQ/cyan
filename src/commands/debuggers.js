@@ -1,4 +1,4 @@
-import pretty from '../pretty'
+import { pretty } from '../utils/pretty.utils'
 import debug from '../debug'
 
 function html() {
