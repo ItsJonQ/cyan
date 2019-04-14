@@ -4,4 +4,4 @@ const setupTests = () => {
   })
 }
 
-module.exports = setupTests
+export default setupTests

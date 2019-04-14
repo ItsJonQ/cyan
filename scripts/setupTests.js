@@ -1,1 +1,3 @@
-require('../src/setupTests')()
+afterEach(() => {
+  document.body.innerHTML = ''
+})

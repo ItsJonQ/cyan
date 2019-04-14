@@ -7,6 +7,6 @@ export { default as debug } from './debug'
 export { default as fireEvent } from './fireEvent'
 export { default as render } from './render'
 
-// export { default as setupTests } from './setupTests'
+export { default as setupTests } from './setupTests'
 
 export default cy
