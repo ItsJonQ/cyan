@@ -1,5 +1,7 @@
 # 🐱 Cyan
 
+[![Build Status](https://travis-ci.org/ItsJonQ/cyan.svg?branch=master)](https://travis-ci.org/ItsJonQ/cyan)
+
 > Cypress-like Testing for React + JSDOM
 
 ## Table of Contents
