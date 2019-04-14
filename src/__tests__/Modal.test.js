@@ -1,6 +1,6 @@
 import React from 'react'
 import Modal from '@helpscout/hsds-react/components/Modal'
-import { cy, render } from '../cyduck'
+import { cy, render } from '../index'
 
 jest.useFakeTimers()
 

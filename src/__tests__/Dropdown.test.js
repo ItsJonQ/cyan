@@ -1,6 +1,6 @@
 import React from 'react'
 import Dropdown from '@helpscout/hsds-react/components/Dropdown/DropdownV2'
-import { cy, render } from '../cyduck'
+import { cy, render } from '../index'
 
 jest.useFakeTimers()
 

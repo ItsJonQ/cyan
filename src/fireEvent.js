@@ -1,3 +1,3 @@
-import { fireEvent } from './node_modules/dom-testing-library/dist/events'
+import { fireEvent } from 'dom-testing-library/dist/events'
 
 export default fireEvent
