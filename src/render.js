@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom'
+import cleanUp from './cleanUp'
 
 const debug = () => document.body.innerHTML
-const cleanUp = () => (document.body.innerHTML = '')
 
 const render = WrappedComponent => {
   // Create the root node for ReactDOM to mount to
