@@ -1,7 +1,7 @@
 {
   "name": "cyduck",
   "version": "0.0.0",
-  "description": "Module generated with Zero",
+  "description": "Cypress-like Testing for React + JSDOM",
   "main": "src/index.js",
   "private": false,
   "scripts": {
