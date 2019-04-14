@@ -1,6 +1,7 @@
 import CyDuck from './cyduck'
 import { get, getByCy } from './utils/selector.utils'
 import debug from './debug'
+import render from './render'
 
 const cy = {
   get: selector => {
@@ -9,7 +10,8 @@ const cy = {
   getByCy: selector => {
     return new CyDuck(getByCy(selector))
   },
-  debug: debug,
+  debug,
+  render,
 }
 
 export default cy

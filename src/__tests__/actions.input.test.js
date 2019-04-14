@@ -1,11 +1,11 @@
 import React from 'react'
-import { cy, render } from '../index'
+import { cy } from '../index'
 
 jest.useFakeTimers()
 
 describe('Actions/input', () => {
   test('Can type into an input', () => {
-    render(<input />)
+    cy.render(<input />)
     const el = cy.get('input')
 
     el.type('Hello')
@@ -15,7 +15,7 @@ describe('Actions/input', () => {
 
   test('Can check an input[type="checkbox"]', () => {
     const spy = jest.fn()
-    render(<input type="checkbox" checked={false} onChange={spy} />)
+    cy.render(<input type="checkbox" checked={false} onChange={spy} />)
     const el = cy.get('input')
 
     el.check()
@@ -25,7 +25,7 @@ describe('Actions/input', () => {
 
   test('Can uncheck an input[type="checkbox"]', () => {
     const spy = jest.fn()
-    render(<input type="checkbox" checked={true} onChange={spy} />)
+    cy.render(<input type="checkbox" checked={true} onChange={spy} />)
     const el = cy.get('input')
 
     el.uncheck()
@@ -35,7 +35,7 @@ describe('Actions/input', () => {
 
   test('Can uncheck an input[type="checkbox"]', () => {
     const spy = jest.fn()
-    render(<input type="checkbox" checked={true} onChange={spy} />)
+    cy.render(<input type="checkbox" checked={true} onChange={spy} />)
     const el = cy.get('input')
 
     el.uncheck()

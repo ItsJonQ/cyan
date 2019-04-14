@@ -1,6 +1,6 @@
 import React from 'react'
 import Dropdown from '@helpscout/hsds-react/components/Dropdown/DropdownV2'
-import { cy, render } from '../index'
+import { cy } from '../index'
 
 jest.useFakeTimers()
 
@@ -9,7 +9,7 @@ describe('Dropdown', () => {
     const props = {
       items: [{ value: 'one' }, { value: 'two' }],
     }
-    render(<Dropdown {...props} />)
+    cy.render(<Dropdown {...props} />)
 
     expect(cy.getByCy('DropdownMenu').exists()).toBe(false)
 
@@ -24,7 +24,7 @@ describe('Dropdown', () => {
       items: [{ value: 'one' }, { value: 'two' }],
       isOpen: true,
     }
-    render(<Dropdown {...props} />)
+    cy.render(<Dropdown {...props} />)
 
     expect(cy.getByCy('DropdownMenu').exists()).toBe(true)
     expect(cy.getByCy('DropdownItem').length).toBe(2)
@@ -37,7 +37,7 @@ describe('Dropdown', () => {
       onSelect: spy,
       isOpen: true,
     }
-    render(<Dropdown {...props} />)
+    cy.render(<Dropdown {...props} />)
 
     cy.getByCy('DropdownItem')
       .first()

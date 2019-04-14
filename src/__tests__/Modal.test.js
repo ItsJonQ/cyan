@@ -1,12 +1,12 @@
 import React from 'react'
 import Modal from '@helpscout/hsds-react/components/Modal'
-import { cy, render } from '../index'
+import { cy } from '../index'
 
 jest.useFakeTimers()
 
 describe('Modal', () => {
   test('Can open/close a Modal', () => {
-    render(
+    cy.render(
       <Modal trigger={<button>Open</button>}>
         <div className="content">Content</div>
       </Modal>,
@@ -26,7 +26,7 @@ describe('Modal', () => {
   })
 
   test('Can render an opened Modal', () => {
-    render(
+    cy.render(
       <Modal isOpen trigger={<button>Open</button>}>
         <div className="content">Content</div>
       </Modal>,
