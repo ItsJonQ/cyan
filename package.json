@@ -9,7 +9,7 @@
     "build": "zero build",
     "lint": "zero lint",
     "dev": "zero test",
-    "test": "zero test",
+    "test": "zero test --coverage",
     "format": "zero format",
     "validate": "zero validate",
     "release": "zero release",
