@@ -14,24 +14,27 @@
 ## Example
 
 ```jsx
-describe('Modal', () => {
-  test('Can open/close a Modal', () => {
-    render(
-      <Modal trigger={<button>Open</button>}>
-        <div className="content">Content</div>
-      </Modal>,
-    )
+import React from 'react'
+import { cy } from 'cyduck'
+import Modal from '../Modal'
 
-    expect(cy.get('.content').exists()).toBe(false)
+test('Can open/close a Modal', () => {
+  render(
+    <Modal trigger={<button>Open</button>}>
+      <div className="content">Content</div>
+    </Modal>,
+  )
 
-    cy.get('button').click()
+  expect(cy.get('.content').exists()).toBe(false)
 
-    expect(cy.get('.content').exists()).toBe(true)
+  cy.get('button').click()
 
-    cy.getByCy('CloseButton').click()
+  expect(cy.get('.content').exists()).toBe(true)
 
-    jest.runOnlyPendingTimers()
+  cy.getByCy('CloseButton').click()
 
-    expect(cy.get('.content').exists()).toBe(false)
-  })
+  jest.runOnlyPendingTimers()
+
+  expect(cy.get('.content').exists()).toBe(false)
+})
 ```
