@@ -1,0 +1,39 @@
+{
+  "name": "cyduck",
+  "version": "0.0.0",
+  "description": "Module generated with Zero",
+  "main": "src/index.js",
+  "private": false,
+  "scripts": {
+    "prestart": "zero prestart",
+    "build": "zero build",
+    "lint": "zero lint",
+    "dev": "zero test",
+    "test": "zero test",
+    "format": "zero format",
+    "validate": "zero validate",
+    "release": "zero release",
+    "version": "zero build",
+    "precommit": "zero pre-commit"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@helpscout/zero": "3.1.1",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "react-router-dom": "5.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@helpscout/hsds-react": "2.28.0",
+    "dom-testing-library": "3.19.1",
+    "pretty": "2.0.0"
+  }
+}
