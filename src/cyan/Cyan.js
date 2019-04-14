@@ -2,7 +2,7 @@ import commands from '../commands'
 import { get } from '../utils/selector.utils'
 import { addCommands } from '../utils/command.utils'
 
-export class CyDuck {
+export class Cyan {
   constructor(el) {
     this.el = el
     this.length = el.length
@@ -30,6 +30,6 @@ export class CyDuck {
   }
 }
 
-addCommands(CyDuck, commands)
+addCommands(Cyan, commands)
 
-export default CyDuck
+export default Cyan

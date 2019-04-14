@@ -1,4 +1,4 @@
-# 🐥 CyDuck
+# 🐱 Cyan
 
 > Cypress-like Testing for React + JSDOM
 
@@ -15,7 +15,7 @@
 
 ```jsx
 import React from 'react'
-import { cy } from 'cyduck'
+import { cy } from '@itsjonq/cyan'
 import Modal from '../Modal'
 
 test('Can open/close a Modal', () => {

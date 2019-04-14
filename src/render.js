@@ -6,7 +6,7 @@ const cleanUp = () => (document.body.innerHTML = '')
 const render = WrappedComponent => {
   // Create the root node for ReactDOM to mount to
   const root = document.createElement('div')
-  root.id = 'CyDuckRoot'
+  root.id = 'CyanRoot'
   document.body.appendChild(root)
 
   // Render the WrappedComponent into the root node

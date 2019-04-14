@@ -1,5 +1,5 @@
 {
-  "name": "cyduck",
+  "name": "@itsjonq/cyan",
   "version": "0.0.0",
   "description": "Cypress-like Testing for React + JSDOM",
   "main": "src/index.js",
@@ -23,6 +23,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "@helpscout/hsds-react": "2.28.0",
     "@helpscout/zero": "3.1.1",
     "react": "16.8.6",
     "react-dom": "16.8.6",
@@ -32,7 +33,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@helpscout/hsds-react": "2.28.0",
     "dom-testing-library": "3.19.1",
     "keycode": "2.2.0",
     "pretty": "2.0.0"
