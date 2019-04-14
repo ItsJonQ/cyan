@@ -19,7 +19,7 @@ import { cy } from 'cyduck'
 import Modal from '../Modal'
 
 test('Can open/close a Modal', () => {
-  render(
+  cy.render(
     <Modal trigger={<button>Open</button>}>
       <div className="content">Content</div>
     </Modal>,
