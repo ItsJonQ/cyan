@@ -1,4 +1,4 @@
-import CyDuck from './cyduck/CyDuck'
+import CyDuck from './cyduck'
 import { get, getByCy } from './utils/selector.utils'
 import debug from './debug'
 
