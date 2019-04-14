@@ -1,6 +1,7 @@
 # 🐱 Cyan
 
 [![Build Status](https://travis-ci.org/ItsJonQ/cyan.svg?branch=master)](https://travis-ci.org/ItsJonQ/cyan)
+[![npm version](https://badge.fury.io/js/%40itsjonq%2Fcyan.svg)](https://badge.fury.io/js/%40itsjonq%2Fcyan)
 
 > Cypress-like Testing for React + JSDOM
 
