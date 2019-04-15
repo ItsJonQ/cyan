@@ -1,6 +1,16 @@
+import cleanUp from './cleanUp'
+
 const setupTests = () => {
+  beforeAll(() => {
+    jest.useFakeTimers()
+  })
+
+  beforeEach(() => {
+    jest.spyOn(window, 'requestAnimationFrame').mockImplementation(cb => cb())
+  })
+
   afterEach(() => {
-    document.body.innerHTML = ''
+    cleanUp()
   })
 }
 

@@ -1,3 +1,3 @@
-afterEach(() => {
-  document.body.innerHTML = ''
-})
+import setupTests from '../src/setupTests'
+
+setupTests()

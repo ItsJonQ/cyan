@@ -1,8 +1,6 @@
 import React from 'react'
 import { cy } from '../index'
 
-jest.useFakeTimers()
-
 describe('Actions/input', () => {
   test('Can type into an input', () => {
     cy.render(<input />)

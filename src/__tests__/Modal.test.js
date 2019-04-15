@@ -2,8 +2,6 @@ import React from 'react'
 import Modal from '@helpscout/hsds-react/components/Modal'
 import { cy } from '../index'
 
-jest.useFakeTimers()
-
 describe('Modal', () => {
   test('Can open/close a Modal', () => {
     cy.render(
@@ -20,8 +18,6 @@ describe('Modal', () => {
 
     cy.getByCy('CloseButton').click()
 
-    jest.runOnlyPendingTimers()
-
     expect(cy.get('.content').exists()).toBe(false)
   })
 
@@ -31,8 +27,6 @@ describe('Modal', () => {
         <div className="content">Content</div>
       </Modal>,
     )
-
-    jest.runOnlyPendingTimers()
 
     expect(cy.get('.content').exists()).toBe(true)
   })

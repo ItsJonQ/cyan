@@ -2,8 +2,6 @@ import React from 'react'
 import Dropdown from '@helpscout/hsds-react/components/Dropdown/DropdownV2'
 import { cy } from '../index'
 
-jest.useFakeTimers()
-
 describe('Dropdown', () => {
   test('Can open a Dropdown', () => {
     const props = {
@@ -43,6 +41,22 @@ describe('Dropdown', () => {
       .first()
       .click()
 
+    cy.type('{esc}')
+
     expect(spy).toHaveBeenCalled()
+  })
+
+  test('Can close a Dropdown with {esc} press', () => {
+    const props = {
+      items: [{ value: 'one' }, { value: 'two' }],
+      isOpen: true,
+    }
+    cy.render(<Dropdown {...props} />)
+
+    expect(cy.getByCy('DropdownMenu').exists()).toBe(true)
+
+    cy.type('{esc}')
+
+    expect(cy.getByCy('DropdownMenu').exists()).toBe(false)
   })
 })

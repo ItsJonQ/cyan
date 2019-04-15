@@ -5,6 +5,8 @@ const commands = Object.keys(fireEvent).reduce((commands, key) => {
     ...commands,
     [key]: function() {
       fireEvent[key](this.getNode())
+      jest.runAllTimers()
+
       return this
     },
   }

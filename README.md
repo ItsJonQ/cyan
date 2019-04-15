@@ -43,8 +43,6 @@ test('Can open/close a Modal', () => {
 
   cy.getByCy('CloseButton').click()
 
-  jest.runOnlyPendingTimers()
-
   expect(cy.get('.content').exists()).toBe(false)
 })
 ```

@@ -12,6 +12,12 @@ export const simulateKeyEvent = (keyEvent, command = '', node) => {
     const keyCodeValue = keyCode(command)
     if (isDefined(keyCodeValue)) {
       fireEvent[keyEvent](targetNode, { keyCode: keyCodeValue })
+      jest.runAllTimers()
     }
   })
+}
+
+export const typeCommand = (command = '', node = document) => {
+  simulateKeyEvent('keyDown', command, node)
+  simulateKeyEvent('keyUp', command, node)
 }
