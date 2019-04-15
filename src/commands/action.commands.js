@@ -32,6 +32,12 @@ function keyPress(command, node) {
   return this
 }
 
+function trigger(event) {
+  fireEvent[event](this.getNode())
+  jest.runAllTimers()
+  return this
+}
+
 function type(value) {
   this.getNode().value = value
   typeCommand(value)
@@ -50,6 +56,7 @@ const commands = {
   keyDown,
   keyUp,
   keyPress,
+  trigger,
   type,
   uncheck,
 }
