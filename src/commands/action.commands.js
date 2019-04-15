@@ -33,6 +33,8 @@ function keyPress(command, node) {
 
 function type(value) {
   this.getNode().value = value
+  this.keyDown(value)
+  this.keyUp(value)
   return this
 }
 
