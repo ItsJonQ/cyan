@@ -26,13 +26,19 @@ function hasClassName(className) {
 
 function isChecked() {
   return assert(() => {
-    return this.getAttribute('checked') === true
+    return !!this.getNode().checked
   })
 }
 
 function isDisabled() {
   return assert(() => {
-    return this.getAttribute('disabled') === true
+    return !!this.getNode().disabled
+  })
+}
+
+function matches(selector) {
+  return assert(() => {
+    return this.getNode().matches(selector)
   })
 }
 
@@ -45,6 +51,7 @@ const commands = {
   hasClass: hasClassName,
   isChecked,
   isDisabled,
+  matches,
 }
 
 export default commands

@@ -4,8 +4,7 @@ import { addCommands } from '../utils/command.utils'
 
 export class Cyan {
   constructor(el) {
-    this.el = el
-    this.length = el.length
+    this.get(el)
   }
 
   // QuerySelectors
@@ -21,12 +20,16 @@ export class Cyan {
   }
 
   // (Base) Getters
-  getNodes() {
+  getEl() {
     return this.el
   }
 
+  getNodes() {
+    return this.getEl()
+  }
+
   getNode() {
-    return this.el[0]
+    return this.getEl()[0]
   }
 }
 

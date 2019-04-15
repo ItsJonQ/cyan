@@ -1,6 +1,5 @@
 import fireEvent from '../fireEvent'
 import { simulateKeyEvent } from '../utils/keyEvent.utils'
-import { isDefined } from '../utils/is.utils'
 
 function check() {
   this.getNode().checked = true
@@ -13,7 +12,7 @@ function clear() {
 }
 
 function hover() {
-  fireEvent.mouseEnter(this.getNode())
+  fireEvent.mouseOver(this.getNode())
   return this
 }
 
@@ -42,13 +41,6 @@ function uncheck() {
   return this
 }
 
-function value(nextValue) {
-  if (isDefined(nextValue)) {
-    this.type(nextValue)
-  }
-  return this.getValue()
-}
-
 const commands = {
   check,
   clear,
@@ -58,7 +50,6 @@ const commands = {
   keyPress,
   type,
   uncheck,
-  value,
 }
 
 export default commands
