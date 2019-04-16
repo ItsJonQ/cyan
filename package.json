@@ -2,7 +2,7 @@
   "name": "@itsjonq/cyan",
   "version": "0.0.6",
   "description": "Cypress-like Testing for React + JSDOM",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "private": false,
   "scripts": {
     "prestart": "zero prestart",
@@ -23,6 +23,18 @@
     "LICENSE"
   ],
   "author": "Jon Quach <hello@jonquach.com> (https://jonquach.com)",
+  "keywords": [
+    "cypress",
+    "cy",
+    "cyan",
+    "JSDOM",
+    "react",
+    "dom",
+    "testing",
+    "render",
+    "unit",
+    "integration"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/itsjonq/cyan.git"
