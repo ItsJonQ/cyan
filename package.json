@@ -1,6 +1,6 @@
 {
   "name": "@itsjonq/cyan",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Cypress-like Testing for React + JSDOM",
   "main": "src/index.js",
   "private": false,
