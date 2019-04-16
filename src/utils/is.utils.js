@@ -1,5 +1,5 @@
 export const isDefined = obj => {
-  return typeof obj !== 'null' && typeof obj !== 'undefined'
+  return obj !== null && obj !== undefined
 }
 
 export const isArray = obj => Array.isArray(obj)

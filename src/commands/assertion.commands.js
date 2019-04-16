@@ -3,7 +3,7 @@ import { isDefined } from '../utils/is.utils'
 
 function contains(content) {
   return assert(() => {
-    return this.getNode().innerHTML.contains(content)
+    return this.getNode().innerHTML.includes(content)
   })
 }
 
@@ -13,8 +13,11 @@ function exists() {
 
 function hasAttribute(attr) {
   return assert(() => {
-    const attrValue = this.getNode()[attr]
-    return isDefined(attrValue)
+    const node = this.getNode()
+    const attrValue = node[attr]
+    const propValue = node.getAttribute(attr)
+
+    return isDefined(attrValue) || isDefined(propValue)
   })
 }
 

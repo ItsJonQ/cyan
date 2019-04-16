@@ -1,5 +1,5 @@
 import fireEvent from '../fireEvent'
-import { simulateKeyEvent, typeCommand } from '../utils/keyEvent.utils'
+import { typeCommand } from '../utils/keyEvent.utils'
 
 function check() {
   const node = this.__getNode('check')
@@ -17,21 +17,6 @@ function hover() {
   const node = this.__getNode('hover')
   fireEvent.mouseOver(node)
   jest.runAllTimers()
-  return this
-}
-
-function keyDown(command, node) {
-  simulateKeyEvent('keyDown', command, node)
-  return this
-}
-
-function keyUp(command, node) {
-  simulateKeyEvent('keyUp', command, node)
-  return this
-}
-
-function keyPress(command, node) {
-  simulateKeyEvent('keyUp', command, node)
   return this
 }
 
@@ -59,9 +44,6 @@ const commands = {
   check,
   clear,
   hover,
-  keyDown,
-  keyUp,
-  keyPress,
   trigger,
   type,
   uncheck,

@@ -7,11 +7,11 @@ describe('commands/action', () => {
       const spy = jest.fn()
 
       cy.render(<input type="radio" checked={false} onChange={spy} />)
-      const assert = cy.get('input')
+      const node = cy.get('input')
 
-      assert.check()
+      node.check()
 
-      expect(assert.isChecked()).toBe(true)
+      expect(node.isChecked()).toBe(true)
     })
   })
 
@@ -20,11 +20,11 @@ describe('commands/action', () => {
       const spy = jest.fn()
 
       cy.render(<input value="hello!" onChange={spy} />)
-      const assert = cy.get('input')
+      const node = cy.get('input')
 
-      assert.clear()
+      node.clear()
 
-      expect(assert.value()).toBe('')
+      expect(node.value()).toBe('')
     })
   })
 
@@ -33,9 +33,48 @@ describe('commands/action', () => {
       const spy = jest.fn()
 
       cy.render(<input onMouseEnter={spy} />)
-      const assert = cy.get('input')
+      const node = cy.get('input')
 
-      assert.hover()
+      node.hover()
+
+      expect(spy).toHaveBeenCalled()
+    })
+  })
+
+  describe('keyDown', () => {
+    test('Can trigger a keyDown', () => {
+      const spy = jest.fn()
+
+      cy.render(<input onKeyDown={spy} />)
+      const node = cy.get('input')
+
+      node.keyDown('{enter}')
+
+      expect(spy).toHaveBeenCalled()
+    })
+  })
+
+  describe('keyUp', () => {
+    test('Can trigger a keyUp', () => {
+      const spy = jest.fn()
+
+      cy.render(<input onKeyUp={spy} />)
+      const node = cy.get('input')
+
+      node.keyUp('{enter}')
+
+      expect(spy).toHaveBeenCalled()
+    })
+  })
+
+  describe('trigger', () => {
+    test('Can trigger an event', () => {
+      const spy = jest.fn()
+
+      cy.render(<input onBlur={spy} />)
+      const node = cy.get('input')
+
+      node.trigger('blur')
 
       expect(spy).toHaveBeenCalled()
     })
@@ -46,11 +85,11 @@ describe('commands/action', () => {
       const spy = jest.fn()
 
       cy.render(<input onChange={spy} />)
-      const assert = cy.get('input')
+      const node = cy.get('input')
 
-      assert.type('Hello There!')
+      node.type('Hello There!')
 
-      expect(assert.value()).toBe('Hello There!')
+      expect(node.value()).toBe('Hello There!')
     })
   })
 
@@ -59,11 +98,11 @@ describe('commands/action', () => {
       const spy = jest.fn()
 
       cy.render(<input type="radio" checked={true} onChange={spy} />)
-      const assert = cy.get('input')
+      const node = cy.get('input')
 
-      assert.uncheck()
+      node.uncheck()
 
-      expect(assert.isChecked()).toBe(false)
+      expect(node.isChecked()).toBe(false)
     })
   })
 })

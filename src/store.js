@@ -3,8 +3,8 @@ import invariant from 'invariant'
 import deepmerge from 'deepmerge'
 import { isObject, isFunction } from './utils/is.utils'
 
-const mockReducer = (state = {}) => state
-const mockStore = createStore(mockReducer, {})
+export const mockReducer = (state = {}) => state
+export const mockStore = createStore(mockReducer, {})
 
 let CYAN_STORE = mockStore
 let CYAN_STORE_REDUCER = mockReducer
@@ -53,9 +53,9 @@ export const setStoreReducer = (reducer = mockReducer) => {
     isObject(reducer) || isFunction(reducer),
     'Provide setStoreReducer with a valid reducer (Object/Function).',
   )
-  CYAN_STORE_REDUCER = isObject(mockReducer)
-    ? combineReducers(mockReducer)
-    : reducer
+  CYAN_STORE_REDUCER = isObject(reducer) ? combineReducers(reducer) : reducer
+
+  setStoreState()
 
   return reducer
 }
