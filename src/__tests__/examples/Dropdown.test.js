@@ -1,6 +1,6 @@
 import React from 'react'
 import Dropdown from '@helpscout/hsds-react/components/Dropdown/DropdownV2'
-import { cy } from '../index'
+import { cy } from '../../index'
 
 describe('Dropdown', () => {
   test('Can open a Dropdown', () => {

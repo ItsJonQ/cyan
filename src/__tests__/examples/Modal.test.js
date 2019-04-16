@@ -1,6 +1,6 @@
 import React from 'react'
 import Modal from '@helpscout/hsds-react/components/Modal'
-import { cy } from '../index'
+import { cy } from '../../index'
 
 describe('Modal', () => {
   test('Can open/close a Modal', () => {
