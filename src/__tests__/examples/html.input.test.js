@@ -1,5 +1,5 @@
 import React from 'react'
-import { cy } from '../index'
+import { cy } from '../../index'
 
 describe('Actions/input', () => {
   test('Can type into an input', () => {

@@ -24,6 +24,12 @@ function hasClassName(className) {
   })
 }
 
+function hasTagName(tagName) {
+  return assert(() => {
+    return this.getNode().tagName.toLowerCase() === tagName.toLowerCase()
+  })
+}
+
 function isChecked() {
   return assert(() => {
     return !!this.getNode().checked
@@ -42,6 +48,16 @@ function matches(selector) {
   })
 }
 
+function toContain(content) {
+  console.warn('Use .contains() instead to .toContain()')
+  return this.contains(content)
+}
+
+function toExist() {
+  console.warn('Use .contains() instead to .toExist()')
+  return this.exists()
+}
+
 const commands = {
   contains,
   exists,
@@ -49,9 +65,13 @@ const commands = {
   hasAttr: hasAttribute,
   hasClassName,
   hasClass: hasClassName,
+  hasTagName,
+  hasTag: hasTagName,
   isChecked,
   isDisabled,
   matches,
+  toContain,
+  toExist,
 }
 
 export default commands

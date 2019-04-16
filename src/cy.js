@@ -11,6 +11,10 @@ const cy = {
   getByCy: selector => {
     return new Cyan(getByCy(selector))
   },
+  find: selector => {
+    console.warn('Use cy.get() instead of cy.find().')
+    return new Cyan(get(selector))
+  },
   type: typeCommand,
   debug,
   render,
