@@ -3,6 +3,8 @@ export const isDefined = obj => {
 }
 
 export const isArray = obj => Array.isArray(obj)
+export const isFunction = obj => typeof obj === 'function'
+export const isObject = obj => typeof obj === 'object'
 export const isString = obj => typeof obj === 'string'
 
 export const isHTMLCollection = obj => obj instanceof HTMLCollection

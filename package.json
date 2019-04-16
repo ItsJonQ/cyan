@@ -21,20 +21,36 @@
     "README.md",
     "LICENSE"
   ],
+  "author": "Jon Quach <hello@jonquach.com> (https://jonquach.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsjonq/cyan.git"
+  },
+  "bugs": {
+    "url": "https://github.com/itsjonq/cyan/issues"
+  },
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": "^16 || ^15",
+    "react-dom": "^16 || ^15"
+  },
+  "dependencies": {
+    "deepmerge": "3.2.0",
+    "dom-testing-library": "^3.19.1",
+    "keycode": "^2.2.0",
+    "pretty": "^2.0.0",
+    "react-redux": "^5.1.1",
+    "react-router": "^4.3.1",
+    "redux": "^4.0.1"
+  },
   "devDependencies": {
     "@helpscout/hsds-react": "2.28.0",
     "@helpscout/zero": "3.1.1",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-router-dom": "4.3.1"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "dependencies": {
-    "dom-testing-library": "3.19.1",
-    "keycode": "2.2.0",
-    "pretty": "2.0.0"
   }
 }

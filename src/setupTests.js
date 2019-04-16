@@ -1,4 +1,5 @@
 import cleanUp from './cleanUp'
+import { completelyResetStore, resetStore } from './store'
 
 const setupTests = () => {
   beforeAll(() => {
@@ -11,6 +12,11 @@ const setupTests = () => {
 
   afterEach(() => {
     cleanUp()
+    resetStore()
+  })
+
+  afterAll(() => {
+    completelyResetStore()
   })
 }
 

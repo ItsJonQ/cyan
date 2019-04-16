@@ -1,5 +1,8 @@
 import { pretty } from '../utils/pretty.utils'
-import debug from '../debug'
+
+function debug(...args) {
+  console.log(pretty(this.getNode().outerHTML), ...args)
+}
 
 function html() {
   return pretty(this.getNode().outerHTML)
