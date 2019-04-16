@@ -1,11 +1,13 @@
 import { isDefined } from '../utils/is.utils'
 
 function getAttribute(attr) {
-  return this.getNode().getAttribute(attr)
+  const node = this.__getNode('getAttribute', attr)
+  return node.getAttribute(attr)
 }
 
 function getComputedStyle(prop) {
-  const styles = window.getComputedStyle(this.getNode())
+  const node = this.__getNode('getComputedStyle')
+  const styles = window.getComputedStyle(node)
   return prop ? styles[prop] : styles
 }
 
@@ -14,18 +16,21 @@ function getId() {
 }
 
 function getTagName() {
-  return this.getNode().tagName.toLowerCase()
+  const node = this.__getNode('getTagName')
+  return node.tagName.toLowerCase()
 }
 
 function getValue(nextValue) {
   if (isDefined(nextValue)) {
     this.type(nextValue)
   }
-  return this.getNode().value
+  const node = this.__getNode('getValue', nextValue)
+  return node.value
 }
 
 function getText() {
-  return this.getNode().textContent || ''
+  const node = this.__getNode('getText')
+  return node.textContent || ''
 }
 
 const commands = {

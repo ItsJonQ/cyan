@@ -1,10 +1,12 @@
 function children() {
-  this.get(this.getNode().children)
+  const node = this.__getNode('children')
+  this.get(node.children)
   return this
 }
 
 function closest(selector) {
-  this.get(this.getNode().closest(selector))
+  const node = this.__getNode('closest', selector)
+  this.get(node.closest(selector))
   return this
 }
 
@@ -24,7 +26,8 @@ function filter(selector) {
 }
 
 function find(selector) {
-  this.get(this.getNode().querySelectorAll(selector))
+  const node = this.__getNode('find', selector)
+  this.get(node.querySelectorAll(selector))
   return this
 }
 
@@ -39,7 +42,8 @@ function last() {
 }
 
 function next() {
-  this.get(this.getNode().nextElementSibling)
+  const node = this.__getNode('next')
+  this.get(node.nextElementSibling)
   return this
 }
 
@@ -49,12 +53,14 @@ function not(selector) {
 }
 
 function parent() {
-  this.get(this.getNode().parentElement)
+  const node = this.__getNode('parent')
+  this.get(node.parentElement)
   return this
 }
 
 function prev() {
-  this.get(this.getNode().previousElementSibling)
+  const node = this.__getNode('next')
+  this.get(node.previousElementSibling)
   return this
 }
 

@@ -17,7 +17,7 @@ export const wrapWithProvider = WrappedComponent => {
   )
 }
 
-const render = WrappedComponent => {
+const render = (WrappedComponent = null) => {
   // Create the root node for ReactDOM to mount to
   const root = createRootNode()
   document.body.appendChild(root)

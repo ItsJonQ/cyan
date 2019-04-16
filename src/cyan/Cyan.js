@@ -1,3 +1,4 @@
+import invariant from 'invariant'
 import commands from '../commands'
 import { get } from '../utils/selector.utils'
 import { addCommands } from '../utils/command.utils'
@@ -30,6 +31,16 @@ export class Cyan {
 
   getNode() {
     return this.getEl()[0]
+  }
+
+  __getNode(fn, selector) {
+    const el = this.getNode()
+    if (selector) {
+      invariant(el, `Base selector does not exist to .${fn}('${selector}')`)
+    } else {
+      invariant(el, `Base selector does not exist for .(${fn})`)
+    }
+    return el
   }
 }
 

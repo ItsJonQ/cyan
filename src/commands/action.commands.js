@@ -2,17 +2,20 @@ import fireEvent from '../fireEvent'
 import { simulateKeyEvent, typeCommand } from '../utils/keyEvent.utils'
 
 function check() {
-  this.getNode().checked = true
+  const node = this.__getNode('check')
+  node.checked = true
   return this
 }
 
 function clear() {
-  this.getNode().value = ''
+  const node = this.__getNode('clear')
+  node.value = ''
   return this
 }
 
 function hover() {
-  fireEvent.mouseOver(this.getNode())
+  const node = this.__getNode('hover')
+  fireEvent.mouseOver(node)
   jest.runAllTimers()
   return this
 }
@@ -33,19 +36,22 @@ function keyPress(command, node) {
 }
 
 function trigger(event) {
-  fireEvent[event](this.getNode())
+  const node = this.__getNode('trigger')
+  fireEvent[event](node)
   jest.runAllTimers()
   return this
 }
 
 function type(value) {
-  this.getNode().value = value
+  const node = this.__getNode('type', value)
+  node.value = value
   typeCommand(value)
   return this
 }
 
 function uncheck() {
-  this.getNode().checked = false
+  const node = this.__getNode('uncheck')
+  node.checked = false
   return this
 }
 

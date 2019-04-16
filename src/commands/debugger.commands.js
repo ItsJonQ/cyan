@@ -1,11 +1,13 @@
 import { pretty } from '../utils/pretty.utils'
 
 function debug(...args) {
-  console.log(pretty(this.getNode().outerHTML), ...args)
+  const node = this.__getNode('debug')
+  console.log(pretty(node.outerHTML), ...args)
 }
 
 function html() {
-  return pretty(this.getNode().outerHTML)
+  const node = this.__getNode('html')
+  return pretty(node.outerHTML)
 }
 
 const commands = {
