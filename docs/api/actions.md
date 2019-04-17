@@ -9,7 +9,7 @@
 - [trigger][3]
 - [type][4]
 - [uncheck][5]
-- [Cyan][6]
+- [events][6]
 
 ## check
 
@@ -21,7 +21,7 @@ Checks a DOM element. Typically used for `<input />`.
 cy.get('input[type=checkbox]').check()
 ```
 
-Returns **[Cyan][7]** The Cyan instance.
+Returns **Cyan** The Cyan instance.
 
 ## clear
 
@@ -33,7 +33,7 @@ Clear the value of a DOM element. Typically used for `<input />`.
 cy.get('input[type=text]').clear()
 ```
 
-Returns **[Cyan][7]** The Cyan instance.
+Returns **Cyan** The Cyan instance.
 
 ## trigger
 
@@ -49,7 +49,7 @@ Triggers an Event for a DOM element.
 cy.get('textarea').trigger('focus')
 ```
 
-Returns **[Cyan][7]** The Cyan instance.
+Returns **Cyan** The Cyan instance.
 
 ## type
 
@@ -65,7 +65,7 @@ Types characters/commands into a DOM element. Typically used for `<input />`.
 cy.get('input[type=text]').type('Hello')
 ```
 
-Returns **[Cyan][7]** The Cyan instance.
+Returns **Cyan** The Cyan instance.
 
 ## uncheck
 
@@ -77,9 +77,9 @@ Unchecks a DOM element. Typically used for `<input />`.
 cy.get('input[type=checkbox]').uncheck()
 ```
 
-Returns **[Cyan][7]** The Cyan instance.
+Returns **Cyan** The Cyan instance.
 
-## Cyan
+## events
 
 Triggers an Event for a DOM element.
 
@@ -105,12 +105,11 @@ Supported events include:
 cy.get('textarea').hover()
 ```
 
-Returns **[Cyan][7]** The Cyan instance.
+Returns **Cyan** The Cyan instance.
 
 [1]: #check
 [2]: #clear
 [3]: #trigger
 [4]: #type
 [5]: #uncheck
-[6]: #cyan
-[7]: #cyan
+[6]: #events

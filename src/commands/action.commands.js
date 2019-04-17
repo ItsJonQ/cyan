@@ -81,8 +81,8 @@ function hover() {
 }
 
 /**
- * @name events
  * @module Cyan
+ * @name events
  *
  * @description Triggers an Event for a DOM element.
  *
