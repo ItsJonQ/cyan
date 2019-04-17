@@ -10,6 +10,7 @@ const setupTests = () => {
   afterEach(() => {
     cleanUp()
     resetStore()
+    window.requestAnimationFrame.mockRestore()
   })
 
   afterAll(() => {
