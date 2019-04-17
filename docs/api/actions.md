@@ -41,7 +41,7 @@ Triggers an Event for a DOM element.
 
 ### Parameters
 
-- `event`
+- `event` **[string][7]** The name of the event.
 
 ### Examples
 
@@ -57,7 +57,7 @@ Types characters/commands into a DOM element. Typically used for `<input />`.
 
 ### Parameters
 
-- `value`
+- `value` **[string][7]** The characters/commands to type.
 
 ### Examples
 
@@ -113,3 +113,4 @@ Returns **Cyan** The Cyan instance.
 [4]: #type
 [5]: #uncheck
 [6]: #events
+[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String

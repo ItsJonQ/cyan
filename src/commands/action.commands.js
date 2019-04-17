@@ -32,6 +32,7 @@ function clear() {
 /**
  * Triggers an Event for a DOM element.
  *
+ * @param {string} event The name of the event.
  * @returns {Cyan} The Cyan instance.
  *
  * @example
@@ -47,6 +48,7 @@ function trigger(event) {
 /**
  * Types characters/commands into a DOM element. Typically used for `<input />`.
  *
+ * @param {string} value The characters/commands to type.
  * @returns {Cyan} The Cyan instance.
  *
  * @example
