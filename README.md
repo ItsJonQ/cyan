@@ -1,8 +1,8 @@
 # 🐱 Cyan
 
-[![Build Status](https://travis-ci.org/ItsJonQ/cyan.svg?branch=master)](https://travis-ci.org/ItsJonQ/cyan)
-[![Coverage Status](https://coveralls.io/repos/github/ItsJonQ/cyan/badge.svg?branch=master)](https://coveralls.io/github/ItsJonQ/cyan?branch=master)
-[![npm version](https://badge.fury.io/js/%40itsjonq%2Fcyan.svg)](https://badge.fury.io/js/%40itsjonq%2Fcyan)
+[![Build Status](https://travis-ci.org/helpscout/cyan.svg?branch=master)](https://travis-ci.org/helpscout/cyan)
+[![Coverage Status](https://coveralls.io/repos/github/helpscout/cyan/badge.svg?branch=master)](https://coveralls.io/github/helpscout/cyan?branch=master)
+[![npm version](https://badge.fury.io/js/%40helpscout%2Fcyan.svg)](https://badge.fury.io/js/%40helpscout%2Fcyan)
 
 > Cypress-like Testing for React + JSDOM
 
@@ -19,14 +19,14 @@
 ## Installation
 
 ```
-npm install --save-dev @itsjonq/cyan
+npm install --save-dev @helpscout/cyan
 ```
 
 ## Example
 
 ```jsx
 import React from 'react'
-import { cy } from '@itsjonq/cyan'
+import { cy } from '@helpscout/cyan'
 import Modal from '../Modal'
 
 test('Can open/close a Modal', () => {
