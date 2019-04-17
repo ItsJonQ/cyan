@@ -2,5 +2,5 @@
 
 ### Table of Contents
 
-- [actions](./actions.md)
-- [selectors](./selectors.md)
+- [Actions](./actions.md)
+- [Selectors](./selectors.md)
