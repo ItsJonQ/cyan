@@ -1,6 +1,7 @@
+import CyanEvents from './Cyan.events'
 export type StyleOrStyleProp = Object | string | number | null
 
-export class Cyan {
+export interface Cyan extends CyanEvents {
   /**
    * Get the DOM elements with a selector.
    *

@@ -15,8 +15,9 @@
     "format": "zero format",
     "validate": "zero validate",
     "release": "zero release",
-    "version": "zero build",
-    "precommit": "zero pre-commit"
+    "version": "type:generate && zero build",
+    "precommit": "zero pre-commit",
+    "type:generate": "node ./scripts/generateTypes.js"
   },
   "files": [
     "docs",
