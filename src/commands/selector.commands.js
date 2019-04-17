@@ -60,7 +60,7 @@ function eq(index) {
 /**
  * Get the DOM elements that match a specific selector.
  *
- * @param {selector} string A selector used for filter matching.
+ * @param {string} selector A selector used for filter matching.
  * @returns {Cyan} The Cyan instance.
  *
  * @example
@@ -74,7 +74,7 @@ function filter(selector) {
 /**
  * Get descendent DOM elements that match a specific selector.
  *
- * @param {selector} string A selector used for descendent matching.
+ * @param {string} selector A selector used for descendent matching.
  * @returns {Cyan} The Cyan instance.
  *
  * @example
@@ -129,7 +129,7 @@ function next() {
 /**
  * Filter DOM elements from the main DOM elements.
  *
- * @param {selector} string A selector used for filter matching.
+ * @param {string} selector A selector used for filter matching.
  * @returns {Cyan} The Cyan instance.
  *
  * @example

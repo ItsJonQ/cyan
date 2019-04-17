@@ -85,8 +85,7 @@ Get the DOM elements that match a specific selector.
 
 ### Parameters
 
-- `selector`
-- `string` **selector** A selector used for filter matching.
+- `selector` **[string][13]** A selector used for filter matching.
 
 ### Examples
 
@@ -102,8 +101,7 @@ Get descendent DOM elements that match a specific selector.
 
 ### Parameters
 
-- `selector`
-- `string` **selector** A selector used for descendent matching.
+- `selector` **[string][13]** A selector used for descendent matching.
 
 ### Examples
 
@@ -157,8 +155,7 @@ Filter DOM elements from the main DOM elements.
 
 ### Parameters
 
-- `selector`
-- `string` **selector** A selector used for filter matching.
+- `selector` **[string][13]** A selector used for filter matching.
 
 ### Examples
 
