@@ -2,6 +2,8 @@ import React from 'react'
 import Dropdown from '@helpscout/hsds-react/components/Dropdown/DropdownV2'
 import { cy } from '../../index'
 
+cy.useFakeTimers()
+
 describe('Dropdown', () => {
   test('Can open a Dropdown', () => {
     const props = {

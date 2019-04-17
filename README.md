@@ -30,6 +30,8 @@ import React from 'react'
 import { cy } from '@helpscout/cyan'
 import Modal from '../Modal'
 
+cy.useFakeTimers()
+
 test('Can open/close a Modal', () => {
   cy.render(
     <Modal trigger={<button>Open</button>}>

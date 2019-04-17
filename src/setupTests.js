@@ -1,11 +1,8 @@
 import cleanUp from './cleanUp'
 import { completelyResetStore, resetStore } from './store'
+import { resetConfig } from './configuration'
 
 const setupTests = () => {
-  beforeAll(() => {
-    jest.useFakeTimers()
-  })
-
   beforeEach(() => {
     jest.spyOn(window, 'requestAnimationFrame').mockImplementation(cb => cb())
   })
@@ -17,6 +14,7 @@ const setupTests = () => {
 
   afterAll(() => {
     completelyResetStore()
+    resetConfig()
   })
 }
 

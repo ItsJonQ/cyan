@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import cleanUp from './cleanUp'
 import debug from './debug'
 import { getStore } from './store'
+import { runAllTimers } from './timers'
 import { createRootNode } from './utils/render.utils'
 
 export const wrapWithProvider = WrappedComponent => {
@@ -25,7 +26,7 @@ const render = (WrappedComponent = null) => {
   // Render the WrappedComponent into the root node
   ReactDOM.render(wrapWithProvider(WrappedComponent), root)
 
-  jest.runAllTimers()
+  runAllTimers()
 
   return {
     debug,

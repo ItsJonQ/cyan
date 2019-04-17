@@ -1,4 +1,5 @@
 import fireEvent from '../fireEvent'
+import { runAllTimers } from '../timers'
 
 const commands = Object.keys(fireEvent).reduce((commands, key) => {
   return {
@@ -6,7 +7,7 @@ const commands = Object.keys(fireEvent).reduce((commands, key) => {
     [key]: function() {
       const node = this.__getNode(key)
       fireEvent[key](node)
-      jest.runAllTimers()
+      runAllTimers()
 
       return this
     },

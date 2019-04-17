@@ -2,6 +2,8 @@ import React from 'react'
 import Modal from '@helpscout/hsds-react/components/Modal'
 import { cy } from '../../index'
 
+cy.useFakeTimers()
+
 describe('Modal', () => {
   test('Can open/close a Modal', () => {
     cy.render(

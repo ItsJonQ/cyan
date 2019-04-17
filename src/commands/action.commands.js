@@ -1,4 +1,5 @@
 import fireEvent from '../fireEvent'
+import { runAllTimers } from '../timers'
 import { typeCommand } from '../utils/keyEvent.utils'
 
 /**
@@ -41,7 +42,7 @@ function clear() {
 function trigger(event) {
   const node = this.__getNode('trigger')
   fireEvent[event](node)
-  jest.runAllTimers()
+  runAllTimers()
   return this
 }
 
@@ -78,7 +79,7 @@ function uncheck() {
 function hover() {
   const node = this.__getNode('hover')
   fireEvent.mouseOver(node)
-  jest.runAllTimers()
+  runAllTimers()
   return this
 }
 

@@ -1,5 +1,6 @@
 import keyCode from 'keycode'
 import fireEvent from '../fireEvent'
+import { runAllTimers } from '../timers'
 import { isDefined, isString } from './is.utils'
 
 export { default as keyCode } from 'keycode'
@@ -17,7 +18,7 @@ export const simulateKeyEvent = (keyEvent, command, node) => {
       const keyCodeValue = keyCode(command)
       if (isDefined(keyCodeValue)) {
         fireEvent[keyEvent](targetNode, { keyCode: keyCodeValue })
-        jest.runAllTimers()
+        runAllTimers()
       }
     })
 }

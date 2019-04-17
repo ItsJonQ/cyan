@@ -2,6 +2,7 @@ import Cyan from './cyan'
 import { get, getByCy } from './utils/selector.utils'
 import { typeCommand } from './utils/keyEvent.utils'
 import debug from './debug'
+import * as timerFunctions from './timers'
 import render from './render'
 
 const cy = {
@@ -18,6 +19,7 @@ const cy = {
   type: typeCommand,
   debug,
   render,
+  ...timerFunctions,
 }
 
 export default cy
