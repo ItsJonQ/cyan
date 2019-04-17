@@ -13,6 +13,7 @@
 
 - [Installation](#installation)
 - [Example](#example)
+- [Documentation](#documentation)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -36,14 +37,18 @@ test('Can open/close a Modal', () => {
     </Modal>,
   )
 
-  expect(cy.get('.content').exists()).toBe(false)
-
   cy.get('button').click()
 
-  expect(cy.get('.content').exists()).toBe(true)
+  expect(cy.get('.Modal').hasClass('is-open')).toBeTruthy()
+  expect(cy.get('.content').exists()).toBeTruthy()
 
   cy.getByCy('CloseButton').click()
 
-  expect(cy.get('.content').exists()).toBe(false)
+  expect(cy.get('.Modal').hasClass('is-open')).toBeFalsy()
+  expect(cy.get('.content').exists()).toBeFalsy()
 })
 ```
+
+## Documentation
+
+- [API](./docs/api)
