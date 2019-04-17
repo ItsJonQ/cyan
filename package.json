@@ -1,6 +1,6 @@
 {
   "name": "@helpscout/cyan",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Cypress-like Testing for React + JSDOM",
   "main": "dist/index.js",
   "private": false,
@@ -15,7 +15,7 @@
     "format": "zero format",
     "validate": "zero validate",
     "release": "zero release",
-    "version": "type:generate && zero build",
+    "version": "npm run type:generate && npm run build",
     "precommit": "zero pre-commit",
     "type:generate": "node ./scripts/generateTypes.js"
   },
