@@ -32,7 +32,7 @@ describe('cy', () => {
         </main>,
       )
 
-      expect(cy.getByCy('hello').hasTagName('aside')).toBe(true)
+      expect(cy.getByCy('hello').isTagName('aside')).toBe(true)
     })
 
     test('Can get an DOM Node by data-cy by chaining', () => {
@@ -47,7 +47,7 @@ describe('cy', () => {
         cy
           .get('main')
           .getByCy('hello')
-          .hasTagName('aside'),
+          .isTagName('aside'),
       ).toBe(true)
     })
   })

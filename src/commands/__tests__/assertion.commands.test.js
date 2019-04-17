@@ -82,21 +82,21 @@ describe('commands/assertion', () => {
     })
   })
 
-  describe('hasTagName', () => {
+  describe('isTagName', () => {
     test('Can check tagName for node', () => {
       cy.render(<div className="one two three" />)
       const assert = cy.get('div')
 
-      expect(assert.hasTagName('div')).toBe(true)
-      expect(assert.hasTagName('DIV')).toBe(true)
+      expect(assert.isTagName('div')).toBe(true)
+      expect(assert.isTagName('DIV')).toBe(true)
     })
 
-    test('Can check tagName for node, with hasTag', () => {
+    test('Can check tagName for node, with isTagName', () => {
       cy.render(<div className="one two three" />)
       const assert = cy.get('div')
 
-      expect(assert.hasTag('div')).toBe(true)
-      expect(assert.hasTag('DIV')).toBe(true)
+      expect(assert.isTagName('div')).toBe(true)
+      expect(assert.isTagName('DIV')).toBe(true)
     })
   })
 

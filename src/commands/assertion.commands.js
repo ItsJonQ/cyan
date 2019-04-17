@@ -27,7 +27,7 @@ function hasClassName(className) {
   })
 }
 
-function hasTagName(tagName) {
+function isTagName(tagName) {
   return assert(() => {
     return this.getNode().tagName.toLowerCase() === tagName.toLowerCase()
   })
@@ -68,8 +68,8 @@ const commands = {
   hasAttr: hasAttribute,
   hasClassName,
   hasClass: hasClassName,
-  hasTagName,
-  hasTag: hasTagName,
+  isTagName,
+  isTag: isTagName,
   isChecked,
   isDisabled,
   matches,
