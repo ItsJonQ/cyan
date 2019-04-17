@@ -4,6 +4,7 @@
   "description": "Cypress-like Testing for React + JSDOM",
   "main": "dist/index.js",
   "private": false,
+  "typings": "typings/index.d.ts",
   "scripts": {
     "prestart": "zero prestart",
     "build": "zero build",
@@ -18,7 +19,9 @@
     "precommit": "zero pre-commit"
   },
   "files": [
+    "docs",
     "dist",
+    "typings",
     "README.md",
     "LICENSE"
   ],

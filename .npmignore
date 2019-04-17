@@ -1,3 +1,6 @@
 __fixtures__
 __mocks__
 __tests__
+
+dist/__fixtures__
+dist/__tests__
