@@ -1,4 +1,7 @@
-import CyanEvents from './Cyan.events'
+import CyanEvents from './Cyan.event.types'
+
+export type Selector = any
+export type CySelector = string
 export type StyleOrStyleProp = Object | string | number | null
 
 export interface Cyan extends CyanEvents {

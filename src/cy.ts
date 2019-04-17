@@ -1,3 +1,4 @@
+import { Cy } from './types/Cy.types'
 import Cyan from './cyan'
 import { get, getByCy, getByText } from './utils/selector.utils'
 import { typeCommand } from './utils/keyEvent.utils'
@@ -6,7 +7,7 @@ import wait from './wait'
 import * as timerFunctions from './timers'
 import render from './render'
 
-const cy = {
+const cy: Cy = {
   get: selector => {
     return new Cyan(get(selector))
   },

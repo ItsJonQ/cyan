@@ -23,9 +23,9 @@ const generateEventTypes = () => {
     export default CyanEvents
   `.trim()
 
-  const eventFile = path.resolve(__dirname, '../typings/Cyan.events.d.ts')
+  const eventFile = path.resolve(__dirname, '../src/types/Cyan.event.types.ts')
   fs.writeFileSync(eventFile, content)
-  console.log('Generated typings/Cyan.events.d.ts')
+  console.log('Generated src/types/Cyan.event.types.ts')
 }
 
 generateEventTypes()

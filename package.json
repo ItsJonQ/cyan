@@ -7,7 +7,7 @@
   "typings": "typings/index.d.ts",
   "scripts": {
     "prestart": "zero prestart",
-    "build": "zero build",
+    "build": "zero build --ts && zero build --no-clean",
     "lint": "zero lint",
     "dev": "zero test",
     "test": "zero test --coverage",
@@ -16,8 +16,7 @@
     "validate": "zero validate",
     "release": "zero release",
     "version": "npm run build",
-    "precommit": "npm run type:generate && zero pre-commit",
-    "type:generate": "node ./scripts/generateTypes.js"
+    "precommit": "zero pre-commit"
   },
   "files": [
     "docs",
