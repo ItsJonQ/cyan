@@ -1,3 +1,4 @@
+import { getByText as baseGetByText } from 'dom-testing-library'
 import {
   isArray,
   isElement,
@@ -27,3 +28,7 @@ export const get = selector => {
 }
 
 export const getByCy = selector => get(`[data-cy=${selector}]`)
+
+export const getByText = (text, node = document.body) => {
+  return baseGetByText(node, text)
+}

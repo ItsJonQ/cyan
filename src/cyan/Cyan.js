@@ -1,6 +1,6 @@
 import invariant from 'invariant'
 import commands from '../commands'
-import { get } from '../utils/selector.utils'
+import { get, getByText } from '../utils/selector.utils'
 import { addCommands } from '../utils/command.utils'
 
 export class Cyan {
@@ -17,6 +17,11 @@ export class Cyan {
 
   getByCy(selector) {
     this.get(`[data-cy=${selector}]`)
+    return this
+  }
+
+  getByText(text) {
+    this.get(getByText(text, this.getNode()))
     return this
   }
 

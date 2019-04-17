@@ -1,4 +1,4 @@
-import { get } from '../selector.utils'
+import { get, getByText } from '../selector.utils'
 
 describe('utils/selector', () => {
   describe('get', () => {
@@ -57,6 +57,17 @@ describe('utils/selector', () => {
 
       expect(Array.isArray(nodes)).toBeTruthy()
       expect(nodes.length).toBe(0)
+    })
+  })
+
+  describe('getByText', () => {
+    test('Can get node by text content', () => {
+      document.body.innerHTML =
+        '<ul><li class="one">Hello</li><li class="two">There</li></ul>'
+
+      expect(getByText('Hello')).toBeTruthy()
+      expect(getByText('There')).toBeTruthy()
+      expect(getByText('Hello')).not.toBe(getByText('There'))
     })
   })
 })

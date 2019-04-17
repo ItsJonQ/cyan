@@ -71,4 +71,41 @@ describe('cy', () => {
       spy.mockRestore()
     })
   })
+
+  describe('getByText', () => {
+    test('Can get an DOM Node by text content', () => {
+      cy.render(
+        <main>
+          <section>
+            <ul>
+              <li>Hello</li>
+            </ul>
+          </section>
+        </main>,
+      )
+
+      expect(cy.getByText('Hello').getTagName()).toBe('li')
+    })
+
+    test('Can chain getByText', () => {
+      cy.render(
+        <main>
+          <p>Hello</p>
+          <section>
+            <ul>
+              <li>Hello</li>
+            </ul>
+          </section>
+        </main>,
+      )
+
+      expect(
+        cy
+          .get('main')
+          .get('section')
+          .getByText('Hello')
+          .getTagName(),
+      ).toBe('li')
+    })
+  })
 })
