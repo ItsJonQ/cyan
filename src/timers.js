@@ -17,3 +17,6 @@ export const runAllTimers = () => {
     jest.runAllTimers()
   }
 }
+
+export const advanceTimersByTime = jest.advanceTimersByTime
+export const clearAllTimers = jest.clearAllTimers
