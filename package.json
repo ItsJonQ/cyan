@@ -15,8 +15,8 @@
     "format": "zero format",
     "validate": "zero validate",
     "release": "zero release",
-    "version": "npm run type:generate && npm run build",
-    "precommit": "zero pre-commit",
+    "version": "npm run build",
+    "precommit": "npm run type:generate && zero pre-commit",
     "type:generate": "node ./scripts/generateTypes.js"
   },
   "files": [
