@@ -10,6 +10,7 @@ export { default as setupTests } from './setupTests'
 
 export * from './configuration'
 export * from './store'
+export * from './promises'
 export * from './timers'
 
 export default cy

@@ -5,6 +5,7 @@ import { typeCommand } from './utils/keyEvent.utils'
 import debug from './debug'
 import delay from './delay'
 import * as timerFunctions from './timers'
+import * as promiseFunctions from './promises'
 import render from './render'
 
 const cy: Cy = {
@@ -25,6 +26,7 @@ const cy: Cy = {
   debug,
   delay,
   render,
+  ...promiseFunctions,
   ...timerFunctions,
 }
 

@@ -7,7 +7,7 @@ export const mockReducer = (state = {}) => state
 export const mockStore = createStore(mockReducer, {})
 
 let CYAN_STORE = mockStore
-let CYAN_STORE_REDUCER = mockReducer
+let CYAN_STORE_REDUCER: any = mockReducer
 let CYAN_STORE_INITIAL_STATE = {}
 
 export const getStore = () => CYAN_STORE
@@ -25,7 +25,10 @@ export const setStore = (store = mockStore) => {
   return getStore()
 }
 
-export const setStoreState = (nextState = {}, callback = () => null) => {
+export const setStoreState = (
+  nextState = {},
+  callback = (state: any) => null,
+) => {
   invariant(
     isObject(nextState),
     'Provide setStoreState with a valid state (Object).',

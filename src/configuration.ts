@@ -3,14 +3,19 @@ import deepmerge from 'deepmerge'
 import { isObject, isFunction } from './utils/is.utils'
 
 const initialState = {
+  Promise: global.Promise,
   useFakeTimers: false,
+  useFakePromises: false,
 }
 
 let CYAN_CONFIGURATION_STATE = initialState
 
 export const getConfigState = () => CYAN_CONFIGURATION_STATE
 
-export const setConfigState = (nextState = {}, callback = () => null) => {
+export const setConfigState = (
+  nextState = {},
+  callback = (state: any) => null,
+) => {
   invariant(
     isObject(nextState),
     'Provide setStoreState with a valid state (Object).',

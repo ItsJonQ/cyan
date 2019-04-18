@@ -68,6 +68,7 @@
   "devDependencies": {
     "@helpscout/hsds-react": "2.28.0",
     "@helpscout/zero": "3.1.1",
+    "@types/jest": "24.0.11",
     "coveralls": "3.0.3",
     "nyc": "13.3.0",
     "react": "16.8.6",

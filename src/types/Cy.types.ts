@@ -85,4 +85,23 @@ export type Cy = {
    * cy.useFakeTimers()
    */
   useFakeTimers(): void
+
+  /**
+   * Mocks the global Promise. Ensures that all Promises immediately resolve synchronously.
+   * Add this to the beginning of your test file.
+   *
+   * Async/Await is not supported for Mock Promises.
+   *
+   * @example
+   * cy.useFakePromises()
+   */
+  useFakePromises(): void
+
+  /**
+   * Restores the mocked global Promise to the original Promise implementation. Used for clean up after.
+   *
+   * @example
+   * cy.clearFakePromises()
+   */
+  clearFakePromises(): void
 }
