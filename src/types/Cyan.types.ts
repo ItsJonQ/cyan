@@ -263,6 +263,7 @@ export interface Cyan extends CyanEvents {
    * Get an attribute/property from the main DOM element.
    *
    * @alias getAttr
+   * @alias attr
    * @param {string} attribute The attribute to get.
    * @returns {any} The attribute/property.
    *
@@ -281,6 +282,17 @@ export interface Cyan extends CyanEvents {
    * cy.get('section').getAttr('id')
    */
   getAttr(attribute: string)
+
+  /**
+   * Get an attribute/property from the main DOM element.
+   *
+   * @param {string} attribute The attribute to get.
+   * @returns {any} The attribute/property.
+   *
+   * @example
+   * cy.get('section').attr('id')
+   */
+  attr(attribute: string)
 
   /**
    * Get the computed styles from the main DOM element.
@@ -330,6 +342,7 @@ export interface Cyan extends CyanEvents {
    * Get the tagName (lowercase) from the main DOM element.
    *
    * @alias getTag
+   * @alias tag
    * @returns {string} The tagName.
    *
    * @example
@@ -345,6 +358,15 @@ export interface Cyan extends CyanEvents {
    * cy.get('.hello').getTag()
    */
   getTag(): string
+
+  /**
+   * Get the tagName (lowercase) from the main DOM element.
+   *
+   *
+   * @example
+   * cy.get('.hello').tag()
+   */
+  tag(): string
 
   /**
    * Get the value from the main DOM element. Typically used for form elements.
