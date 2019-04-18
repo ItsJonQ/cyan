@@ -308,12 +308,23 @@ export interface Cyan extends CyanEvents {
   /**
    * Get the id from the main DOM element.
    *
+   * @alias id
    * @returns {string | null} The id.
    *
    * @example
    * cy.get('section').getId()
    */
   getId(): string | null
+
+  /**
+   * Get the id from the main DOM element.
+   *
+   * @returns {string | null} The id.
+   *
+   * @example
+   * cy.get('section').id()
+   */
+  id(): string | null
 
   /**
    * Get the tagName (lowercase) from the main DOM element.
@@ -338,12 +349,34 @@ export interface Cyan extends CyanEvents {
   /**
    * Get the value from the main DOM element. Typically used for form elements.
    *
+   * @alias value
    * @returns {string | null} The value.
    *
    * @example
-   * cy.get('.hello').getTagName()
+   * cy.get('.hello').getValue()
    */
   getValue(): string | null
+
+  /**
+   * Get the value from the main DOM element. Typically used for form elements.
+   *
+   * @returns {string | null} The value.
+   *
+   * @example
+   * cy.get('.hello').value()
+   */
+  value(): string | null
+
+  /**
+   * Get the text content from the main DOM element.
+   *
+   * @alias text
+   * @returns {string | null} The text content.
+   *
+   * @example
+   * cy.get('.hello').getText()
+   */
+  getText(): string | null
 
   /**
    * Get the text content from the main DOM element.
@@ -351,9 +384,9 @@ export interface Cyan extends CyanEvents {
    * @returns {string | null} The text content.
    *
    * @example
-   * cy.get('.hello').getText()
+   * cy.get('.hello').text()
    */
-  getText(): string | null
+  text(): string | null
 
   //////////////////////////////////////////////////////////////////////////////
   // Selectors

@@ -43,6 +43,7 @@ const commands = {
   getText,
   // Aliases
   style: getComputedStyle,
+  id: getId,
   tagName: getTagName,
   text: getText,
   value: getValue,
