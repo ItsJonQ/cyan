@@ -1,18 +1,60 @@
+import { addToPromiseQueue } from '../promises'
+import { isFunction } from '../utils/is.utils'
+
 /**
  * Mock promise that immediately resolves.
  * Async/Await is not supported for Mock Promises.
  */
 function MockPromise(callback) {
-  const result = callback(MockPromise.resolve, MockPromise.reject)
+  let resolved = null
+  let rejected = null
 
-  return {
+  const resolveIntercepteor = value => {
+    resolved = value
+    return MockPromise.resolve(value)
+  }
+
+  const rejectedInterceptor = value => {
+    resolved = value
+    return MockPromise.reject(value)
+  }
+
+  let result = isFunction(callback)
+    ? callback(resolveIntercepteor, rejectedInterceptor)
+    : null
+
+  const promise = {
     then: callback => new Resolved(result && result.value).then(callback),
     catch: callback => new Rejected(result && result.reason).catch(callback),
   }
+
+  addToPromiseQueue({ ...promise, resolved, rejected })
+
+  return promise
 }
 
 MockPromise.resolve = value => new Resolved(value)
 MockPromise.reject = reason => new Rejected(reason)
+MockPromise.all = mockPromiseAll
+
+function mockPromiseAll(promises: Array<any> = []) {
+  let values: any = []
+  try {
+    values = promises.map(promise => {
+      const result = promise.then(v => v)
+      return result.value
+    })
+  } catch (err) {
+    /* istanbul ignore next */
+    values = err
+  }
+
+  return {
+    then: callback => callback(values),
+    /* istanbul ignore next */
+    catch: callback => callback(values),
+  }
+}
 
 class Resolved {
   state: string
