@@ -40,6 +40,14 @@ export type Cy = {
   debug(): void
 
   /**
+   * Runs all immediates, ticks, and timers.
+   *
+   * @example
+   * cy.fastForward()
+   */
+  fastForward(): void
+
+  /**
    * Renders a React component into the DOM.
    *
    * @param {ReactComponent} component The component to render into the document.
@@ -65,9 +73,9 @@ export type Cy = {
    * @param {number} time Amount of time (ms) to wait.
    *
    * @example
-   * cy.wait(1000)
+   * cy.delay(1000)
    */
-  wait(time: number): void
+  delay(time: number): void
 
   /**
    * Use fake timers with Jest. Allows for cy actions to automatically increment timers when fired.

@@ -3,7 +3,7 @@ import Cyan from './cyan'
 import { get, getByCy, getByText } from './utils/selector.utils'
 import { typeCommand } from './utils/keyEvent.utils'
 import debug from './debug'
-import wait from './wait'
+import delay from './delay'
 import * as timerFunctions from './timers'
 import render from './render'
 
@@ -23,7 +23,7 @@ const cy: Cy = {
   },
   type: typeCommand,
   debug,
-  wait,
+  delay,
   render,
   ...timerFunctions,
 }

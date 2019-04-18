@@ -1,16 +1,14 @@
 import cleanUp from './cleanUp'
 import { completelyResetStore, resetStore } from './store'
 import { resetConfig } from './configuration'
+import setupJSDOM from './polyfills/jsdom.polyfills'
 
 const setupTests = () => {
-  beforeEach(() => {
-    jest.spyOn(window, 'requestAnimationFrame').mockImplementation(cb => cb())
-  })
+  setupJSDOM()
 
   afterEach(() => {
     cleanUp()
     resetStore()
-    window.requestAnimationFrame.mockRestore()
   })
 
   afterAll(() => {

@@ -18,5 +18,10 @@ export const runAllTimers = () => {
   }
 }
 
+export const fastForward = () => {
+  jest.runAllImmediates()
+  jest.runAllTimers()
+}
+
 export const advanceTimersByTime = jest.advanceTimersByTime
 export const clearAllTimers = jest.clearAllTimers
