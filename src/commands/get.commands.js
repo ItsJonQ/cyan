@@ -42,8 +42,11 @@ const commands = {
   getValue,
   getText,
   // Aliases
+  attr: getAttribute,
+  id: getId,
   style: getComputedStyle,
   tagName: getTagName,
+  tag: getTagName,
   text: getText,
   value: getValue,
 }
