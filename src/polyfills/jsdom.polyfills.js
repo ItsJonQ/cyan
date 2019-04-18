@@ -8,6 +8,7 @@ const setupJSDOM = () => {
         removeAllRanges: () => ({}),
       }
     }
+    window.scrollTo = () => null
     document.createRange = () => ({
       setStart: () => {},
       setEnd: () => {},
@@ -23,6 +24,7 @@ const setupJSDOM = () => {
 
   afterEach(() => {
     window.getSelection = undefined
+    window.scrollTo = undefined
     window.requestAnimationFrame.mockRestore()
     document.createRange = undefined
     document.execCommand = undefined
