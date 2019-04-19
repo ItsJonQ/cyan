@@ -1,5 +1,6 @@
 import { useFakePromises, clearFakePromises } from '../promises'
 import MockPromise from '../mocks/Promise.mock'
+import { noop } from '../../utils/other.utils'
 
 describe('promises', () => {
   describe('Promise (then/catch)', () => {
@@ -88,7 +89,7 @@ describe('promises', () => {
         })
       }
 
-      expect(testPromise()).rejects.toBe('Error')
+      expect(testPromise()).rejects.toEqual(new Error('Error'))
     })
 
     test('Promise.resolve can correctly handle throw', () => {
@@ -128,9 +129,11 @@ describe('promises', () => {
         })
       }
 
-      testPromise().then(result => {
-        expect(result).toBeTruthy()
-      })
+      testPromise()
+        .then(result => {
+          expect(result).toBeTruthy()
+        })
+        .catch(noop)
     })
 
     test('Promise.reject can correctly handle reject', () => {
@@ -153,10 +156,6 @@ describe('promises', () => {
       useFakePromises()
     })
 
-    test('Can run with no promises', () => {
-      Promise.all()
-    })
-
     test('Can resolve all promises', () => {
       const one = new Promise(resolve => resolve('one'))
       const two = new Promise(resolve => resolve('two'))
@@ -170,11 +169,10 @@ describe('promises', () => {
     test('Can catch results', () => {
       const one = new Promise(resolve => resolve('one'))
       const two = new Promise(resolve => resolve('two'))
-      const three = new Promise(resolve => resolve('three'))
+      const three = new Promise((resolve, reject) => reject('three'))
 
-      // TODO: Fix this test
       Promise.all([one, two, three]).catch(values => {
-        expect(values).toEqual(['one', 'two', 'three'])
+        expect(values).toEqual('three')
       })
     })
   })

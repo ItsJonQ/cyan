@@ -88,7 +88,7 @@ export type Cy = {
 
   /**
    * Mocks the global Promise. Ensures that all Promises immediately resolve synchronously.
-   * Add this to the beginning of your test file.
+   * This is typically added to beforeEach. The mock promises are automatically restored afterEach test.
    *
    * Async/Await is not supported for Mock Promises.
    *
@@ -99,9 +99,26 @@ export type Cy = {
 
   /**
    * Restores the mocked global Promise to the original Promise implementation. Used for clean up after.
+   * The mock promises are automatically restored afterEach test.
    *
    * @example
    * cy.clearFakePromises()
    */
   clearFakePromises(): void
+
+  /**
+   * Forces mock promises (set with cy.useFakePromises) to resolve.
+   * @param {Function<any>} callback Optional. Used to adjust the resolve value.
+   * @example
+   * cy.forceAllPromisesToResolve(value => `${value} works!`)
+   */
+  forceAllPromisesToResolve(callback?: (value: any) => any): void
+
+  /**
+   * Forces mock promises (set with cy.useFakePromises) to reject.
+   * @param {Function<any>} callback Optional. Used to adjust the reject value.
+   * @example
+   * cy.forceAllPromisesToReject(reason => `${reason} failed!`)
+   */
+  forceAllPromisesToReject(callback?: (reason: any) => any): void
 }

@@ -1,20 +1,24 @@
 import cleanUp from './cleanUp'
 import { completelyResetStore, resetStore } from './store'
 import { resetConfig } from './configuration'
-import { clearFakePromises, clearPromiseQueue } from './promises'
+import { clearFakePromises } from './promises'
+import promiseQueue from './promises/promiseQueue'
+import promiseResolver from './promises/promiseResolver'
 import setupJSDOM from './polyfills/jsdom.polyfills'
 
 const setupTests = () => {
   setupJSDOM()
 
   beforeEach(() => {
-    clearPromiseQueue()
+    promiseResolver.clear()
+    promiseQueue.clear()
   })
 
   afterEach(() => {
     cleanUp()
     clearFakePromises()
-    clearPromiseQueue()
+    promiseResolver.clear()
+    promiseQueue.clear()
     resetStore()
   })
 
