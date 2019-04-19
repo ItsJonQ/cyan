@@ -1,4 +1,5 @@
 import { useFakePromises, clearFakePromises } from '../promises'
+import promiseQueue from '../promiseQueue'
 import MockPromise from '../mocks/Promise.mock'
 import { noop } from '../../utils/other.utils'
 
@@ -21,9 +22,11 @@ describe('promises', () => {
         expect(result).toBe('Hello')
       })
 
-      rejectedPromise().catch(result => {
-        expect(result).toBe('Nope')
+      rejectedPromise().catch(reason => {
+        expect(reason).toBe('Nope')
       })
+
+      promiseQueue.runAllPromises()
     })
 
     test('Can clear mocked global Promise', () => {
@@ -44,6 +47,8 @@ describe('promises', () => {
       testPromise().then(result => {
         expect(result).toBe('Hello')
       })
+
+      promiseQueue.runAllPromises()
     })
 
     test('Can mock Promises.reject', () => {
@@ -54,6 +59,8 @@ describe('promises', () => {
       testPromise().catch(result => {
         expect(result).toBe('OMG')
       })
+
+      promiseQueue.runAllPromises()
     })
 
     test('Can be resolved with Jest expect', () => {
@@ -104,6 +111,8 @@ describe('promises', () => {
       testPromise().catch(result => {
         expect(result).toBeTruthy()
       })
+
+      promiseQueue.runAllPromises()
     })
 
     test('Promise.resolve can correctly handle catch', () => {
@@ -118,6 +127,8 @@ describe('promises', () => {
       testPromise().catch(result => {
         expect(result).toBeTruthy()
       })
+
+      promiseQueue.runAllPromises()
     })
 
     test('Promise.reject can correctly handle then', () => {
@@ -134,6 +145,8 @@ describe('promises', () => {
           expect(result).toBeTruthy()
         })
         .catch(noop)
+
+      promiseQueue.runAllPromises()
     })
 
     test('Promise.reject can correctly handle reject', () => {
@@ -148,6 +161,8 @@ describe('promises', () => {
       testPromise().then(result => {
         expect(result).toBeTruthy()
       })
+
+      promiseQueue.runAllPromises()
     })
   })
 
@@ -164,6 +179,8 @@ describe('promises', () => {
       Promise.all([one, two, three]).then(values => {
         expect(values).toEqual(['one', 'two', 'three'])
       })
+
+      promiseQueue.runAllPromises()
     })
 
     test('Can catch results', () => {
@@ -174,6 +191,8 @@ describe('promises', () => {
       Promise.all([one, two, three]).catch(values => {
         expect(values).toEqual('three')
       })
+
+      promiseQueue.runAllPromises()
     })
   })
 })

@@ -1,4 +1,4 @@
-import { useFakePromises, clearFakePromises } from '../promises'
+import { useFakePromises, clearFakePromises, runNextPromise } from '../promises'
 import {
   forceAllPromisesToResolve,
   forceAllPromisesToReject,
@@ -22,6 +22,8 @@ describe('promiseResolver', () => {
         resolve('ok')
         reject('nope')
       })
+
+    runNextPromise()
 
     test()
       .then(spy)
@@ -48,6 +50,8 @@ describe('promiseResolver', () => {
         expect(err).toBe('nope, because!')
       })
 
+    runNextPromise()
+
     expect(spy).not.toBeCalled()
   })
 
@@ -64,6 +68,8 @@ describe('promiseResolver', () => {
         resolve('ok')
         reject('nope')
       })
+
+    runNextPromise()
 
     test()
       .then(result => {

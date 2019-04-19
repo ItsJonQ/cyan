@@ -14,6 +14,12 @@ export const clearFakePromises = () => {
   promiseQueue.clear()
 }
 
+export const runNextPromise = () => promiseQueue.runNextPromise()
+export const runAllPromises = () => promiseQueue.runAllPromises()
+
+export const runPromisesImmediately = () =>
+  promiseQueue.runPromisesImmediately()
+
 export const forceAllPromisesToResolve = callback => {
   promiseResolver.processWith('resolve')
   promiseResolver.addHandler(callback)

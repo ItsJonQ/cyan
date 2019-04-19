@@ -87,7 +87,8 @@ export type Cy = {
   useFakeTimers(): void
 
   /**
-   * Mocks the global Promise. Ensures that all Promises immediately resolve synchronously.
+   * Mocks the global Promise. Ensures that all Promises process synchronously.
+   * Promisees do not immediately invoke. They are added to a Mock Promise queue.
    * This is typically added to beforeEach. The mock promises are automatically restored afterEach test.
    *
    * Async/Await is not supported for Mock Promises.
@@ -96,6 +97,38 @@ export type Cy = {
    * cy.useFakePromises()
    */
   useFakePromises(): void
+
+  /**
+   * Forces all Mock Promises to invoke immediately. Used with cy.useFakePromises()
+   * Async/Await is not supported for Mock Promises.
+   *
+   * @example
+   * cy.useFakePromises()
+   * cy.runPromisesImmediately()
+   */
+  runPromisesImmediately(): void
+
+  /**
+   * Processes the next Promise immediately. Used with cy.useFakePromises.
+   * Using cy.runPromisesImmediately() by-passes this method.
+   *
+   * Async/Await is not supported for Mock Promises.
+   *
+   * @example
+   * cy.runNextPromise()
+   */
+  runNextPromise(): void
+
+  /**
+   * Processes the next Promise immediately. Used with cy.useFakePromises.
+   * Using cy.runPromisesImmediately() by-passes this method.
+   *
+   * Async/Await is not supported for Mock Promises.
+   *
+   * @example
+   * cy.runAllPromises()
+   */
+  runAllPromises(): void
 
   /**
    * Restores the mocked global Promise to the original Promise implementation. Used for clean up after.
