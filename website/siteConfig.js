@@ -45,13 +45,13 @@ const siteConfig = {
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/docusaurus.svg',
-  footerIcon: 'img/docusaurus.svg',
+  headerIcon: 'img/cyan.svg',
+  footerIcon: 'img/cyan.svg',
   favicon: 'img/favicon.png',
 
   /* Colors for website */
   colors: {
-    primaryColor: '#1292EE',
+    primaryColor: '#0077CC',
     secondaryColor: '#1292EE',
   },
 
@@ -79,7 +79,7 @@ const siteConfig = {
   },
 
   // Add custom scripts here that would be placed in <script> tags.
-  scripts: ['https://buttons.github.io/buttons.js'],
+  scripts: ['https://buttons.github.io/buttons.js', '/js/scrollspy.js'],
 
   // On page navigation for the current documentation page.
   onPageNav: 'separate',
@@ -87,8 +87,8 @@ const siteConfig = {
   cleanUrl: true,
 
   // Open Graph and Twitter card images.
-  ogImage: 'img/docusaurus.png',
-  twitterImage: 'img/docusaurus.png',
+  ogImage: 'img/cyan.png',
+  twitterImage: 'img/cyan.png',
 
   // Show documentation's last contributor's name.
   // enableUpdateBy: true,

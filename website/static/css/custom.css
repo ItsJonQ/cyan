@@ -1,3 +1,28 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 2em;
+}
+
+.wrapper {
+  max-width: 1280px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .separateOnPageNav .wrapper,
+  .separateOnPageNav .headerWrapper.wrapper {
+    max-width: 1280px;
+  }
+}
+
 .fixedHeaderContainer,
 .navigationSlider .slidingNav ul,
 .navigationSlider .slidingNav ul li > a:hover,
@@ -7,7 +32,7 @@
   color: black;
 }
 .fixedHeaderContainer header a {
-  color: #1292ee;
+  color: black;
 }
 .fixedHeaderContainer header .headerTitleWithLogo {
   display: block !important;
@@ -47,7 +72,7 @@
   display: flex;
   font-size: 16px;
   font-size: 1em;
-  font-weight: 300;
+  font-weight: 600;
   height: 32px;
   line-height: 1.2em;
   margin: 0;
@@ -75,8 +100,25 @@
   }
 }
 
+.homeContainer .homeWrapper {
+  padding-bottom: 4em;
+  padding-top: 4em;
+}
+
+@media (min-width: 768px) {
+  .homeContainer .homeWrapper {
+    padding-bottom: 6em;
+    padding-top: 6em;
+  }
+}
+
 h2.projectTitle {
   color: black;
+  font-size: 3.5rem;
+}
+
+h2.projectTitle small {
+  font-weight: 300;
 }
 
 header.postHeader:empty + article h1 {
@@ -85,6 +127,15 @@ header.postHeader:empty + article h1 {
 
 .nav-footer {
   background: white;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+@media only screen and (min-width: 736px) {
+  .nav-footer .sitemap {
+    padding: 0 20px;
+  }
 }
 
 .nav-footer .sitemap h5,
@@ -101,4 +152,44 @@ header.postHeader:empty + article h1 {
   background: #f6f8fa;
   border-radius: 4px;
   padding: 20px;
+}
+
+p,
+pre {
+  margin-bottom: 1.5em;
+}
+
+.button {
+  text-transform: initial;
+  font-weight: 600;
+  padding: 12px 2em;
+}
+
+.nav-footer .sitemap .nav-home {
+  height: 30px;
+  width: 30px;
+  padding: 0;
+  margin-top: 0;
+  margin-right: 40px;
+  margin-bottom: 20px;
+}
+
+.nav-footer .sitemap .nav-home img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+ul.toc-headings > li {
+  padding-bottom: 0px; /* moved to li > a */
+}
+
+.toc-headings > li > a {
+  display: block;
+  padding: 4px;
+}
+
+.toc-headings > li > a.active {
+  background-color: rgba(27, 31, 35, 0.05);
+  font-weight: bold;
 }
