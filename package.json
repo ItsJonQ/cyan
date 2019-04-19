@@ -8,6 +8,7 @@
   "scripts": {
     "prestart": "zero prestart",
     "build": "zero build --ts && zero build --no-clean",
+    "postbuild": "sh ./scripts/postbuild.sh",
     "lint": "zero lint",
     "dev": "zero test",
     "test": "zero test --coverage",
@@ -21,7 +22,6 @@
   "files": [
     "docs",
     "dist",
-    "typings",
     "README.md",
     "LICENSE"
   ],
