@@ -69,7 +69,7 @@ const siteConfig = {
     ]
   },
   */
-  stylesheets: ['https://fonts.googleapis.com/css?family=Roboto:300,400,700'],
+  // stylesheets: ['https://fonts.googleapis.com/css?family=Roboto:300,400,700'],
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
   copyright: `Copyright © ${new Date().getFullYear()} Help Scout`,
