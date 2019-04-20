@@ -25,6 +25,7 @@
 
   --codeBackground: #141414;
 
+  --wrapperMaxWidth: 1280px;
   --mainNavHeight: 60px;
 
   --animationDuration: 200ms;
@@ -154,13 +155,13 @@ article a:not(.button):not(.anchor):hover,
  * Container
  */
 .wrapper {
-  max-width: 1280px;
+  max-width: var(--wrapperMaxWidth);
 }
 
 @media only screen and (min-width: 1024px) {
   .separateOnPageNav .wrapper,
   .separateOnPageNav .headerWrapper.wrapper {
-    max-width: 1280px;
+    max-width: var(--wrapperMaxWidth);
   }
 }
 

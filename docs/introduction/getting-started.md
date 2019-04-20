@@ -29,8 +29,8 @@ import React from 'react'
 import { cy } from '@helpscout/cyan'
 
 /**
- * This is a very simple example component. Typically, your component would live
- * outside the test file, and imported.
+ * This is a very simple example component. Typically, your
+ * component would live outside the test file, and imported.
  */
 class RedRanger extends React.Component {
   state = {
@@ -56,15 +56,19 @@ class RedRanger extends React.Component {
 // Creating our test for the <RedRanger /> component with Jest
 describe('RedRanger', () => {
   test('Can morph when button is clicked', () => {
-    // We're rendering our <RedRanger /> component. This renders your component
-    // with ReactDOM.render() and is injected into JSDOM's document.body
-    // HTML node.
+    // We're rendering our <RedRanger /> component.
+    // This renders your component
+    // with ReactDOM.render() and is injected into JSDOM's
+    // document.body HTML node.
     cy.render(<RedRanger />)
 
     // Our first assertion!
-    // We're finding our RedRanger DOM node using the '.red' selector.
-    // We're testing to make sure that <RedRanger /> renders the text content
-    // containing the word "Jason".
+    //
+    // We're finding our RedRanger DOM node using the
+    // '.red' selector.
+    //
+    // We're testing to make sure that <RedRanger /> renders
+    // the text content containing the word "Jason".
     //
     // Jason hasn't morphed yet.
     expect(cy.get('.red').text()).toContain('Jason')
