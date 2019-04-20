@@ -137,7 +137,9 @@ article a:not(.button):not(.anchor):hover,
   padding: 16px 2.5em 17px;
   line-height: 1;
   transform: translateY(0);
-  transition: all var(--animationDuration) ease;
+  transition: border var(--animationDuration) ease,
+    box-shadow var(--animationDuration) ease,
+    transform var(--animationDuration) ease;
   text-transform: initial;
 }
 
