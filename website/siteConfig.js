@@ -39,6 +39,7 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     { doc: 'introduction/getting-started', label: 'Getting Started' },
+    { href: '#', label: 'Dark Mode' },
   ],
 
   // If you have users set above, you add it here:
@@ -80,7 +81,11 @@ const siteConfig = {
   },
 
   // Add custom scripts here that would be placed in <script> tags.
-  scripts: ['https://buttons.github.io/buttons.js', '/js/scrollspy.js'],
+  scripts: [
+    'https://buttons.github.io/buttons.js',
+    '/js/scrollspy.js',
+    '/js/darkMode.js',
+  ],
 
   // On page navigation for the current documentation page.
   onPageNav: 'separate',

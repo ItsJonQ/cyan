@@ -1,9 +1,21 @@
 :root {
   --brandColorRGB: 0, 255, 255;
-  --brandColor: rgb(var(--brandColorRGB));
 
-  --linkColor: black;
-  --linkHoverColor: black;
+  --backgroundColorRGB: 255, 255, 255;
+  --textColorRGB: 0, 0, 0;
+  --textColorHoverRGB: 0, 0, 0;
+  --borderContrast: 0.1;
+
+  --brandColor: rgb(var(--brandColorRGB));
+  --backgroundColor: rgb(var(--backgroundColorRGB));
+  --textColor: rgb(var(--textColorRGB));
+  --textHoverColor: rgb(var(--textColorHoverRGB));
+  --headingTextColor: rgb(var(--textColorRGB));
+
+  --borderColor: rgba(var(--textColorRGB), var(--borderContrast));
+
+  --linkColor: var(--textColor);
+  --linkHoverColor: var(--textHoverColor);
 
   --fontWeightBold: 700;
   --fontSize: 18px;
@@ -11,9 +23,7 @@
   --fontSizeNavGroups: 16px;
   --fontSizeSideNav: 14px;
 
-  --codeBackground: #f6f8fa;
-
-  --leftSidebarBackground: #f6f8fa;
+  --codeBackground: #141414;
 
   --mainNavHeight: 60px;
 
@@ -23,10 +33,22 @@
 /**
  * Base
  */
+* {
+  box-sizing: border-box;
+}
+
+html.dark {
+  --backgroundColorRGB: 0, 0, 0;
+  --textColorRGB: 255, 255, 255;
+  --textColorHoverRGB: 0, 0, 0;
+  --borderContrast: 0.2;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #444;
+  background: var(--backgroundColor);
+  color: var(--textColor);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: var(--fontSize);
@@ -47,11 +69,22 @@ h3,
 h4,
 h5,
 h6 {
-  color: black;
+  color: var(--headingTextColor);
   font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin-top: 60px;
   margin-bottom: 20px;
+}
+
+/**
+ * Resets
+ */
+
+.hash-link path {
+  fill: var(--linkColor);
+}
+.hash-link:hover path {
+  fill: var(--linkHoverColor);
 }
 
 /**
@@ -62,12 +95,18 @@ article a:not(.button):not(.anchor),
   background: rgba(var(--brandColorRGB), 0.1);
   border-bottom: 2px solid var(--brandColor);
   color: var(--linkColor);
-  transition: all var(--animationDuration) ease;
+  transition: none;
 }
 article a:not(.button):not(.anchor):hover,
 .nav-footer .copyright a:hover {
   background: rgba(var(--brandColorRGB), 1);
   border-bottom: 2px solid var(--brandColor);
+  color: var(--linkHoverColor);
+}
+
+.navBreadcrumb a,
+.navBreadcrumb span {
+  color: rgba(var(--textColorRGB), 0.5);
 }
 
 /**
@@ -76,11 +115,13 @@ article a:not(.button):not(.anchor):hover,
 
 .button {
   border-radius: 9999px;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   border-color: transparent;
   color: var(--linkColor);
   font-size: 1rem;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 6px var(--borderColor),
+    0 1px 3px 0px rgba(var(--textColorRGB), 0.08),
+    0 0 0 1px rgba(var(--textColorRGB), 0.08);
   font-weight: var(--fontWeightBold);
   padding: 16px 2.5em 17px;
   line-height: 1;
@@ -90,19 +131,21 @@ article a:not(.button):not(.anchor):hover,
 }
 
 .button:hover {
-  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 7px 14px var(--borderColor),
+    0 3px 6px rgba(var(--textColorRGB), 0.08),
+    0 0 0 1px rgba(var(--textColorRGB), 0.08);
   color: var(--linkHoverColor);
   background: var(--brandColor);
   transform: translateY(-2px);
 }
 
-.button:active {
-  color: var(--linkColor);
+.button:hover:active {
+  color: var(--linkHoverColor);
   transform: translateY(2px);
 }
 
 .button:focus {
-  border-color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(var(--textColorRGB), 0.2);
   color: var(--linkColor);
   outline: none;
 }
@@ -137,22 +180,22 @@ article a:not(.button):not(.anchor):hover,
 .navigationSlider .slidingNav ul li > a:hover,
 .navigationSlider .slidingNav ul li.siteNavItemActive > a,
 .navigationSlider .slidingNav ul li.siteNavGroupActive > a {
-  background: white;
-  color: black;
+  background: var(--backgroundColor);
+  color: var(--textColor);
 }
 .fixedHeaderContainer {
   padding: 13px 0;
   min-height: var(--mainNavHeight);
 }
 .fixedHeaderContainer header a {
-  color: black;
+  color: var(--textColor);
 }
 .fixedHeaderContainer header .headerTitleWithLogo {
   display: block !important;
 }
 
 .fixedHeaderContainer {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 3px var(--borderColor), 0 2px 10px var(--borderColor);
 }
 
 .fixedHeaderContainer header > a {
@@ -167,6 +210,11 @@ article a:not(.button):not(.anchor):hover,
 /**
  * Navigation
  */
+@media only screen and (max-width: 1023px) {
+  .docsNavContainer {
+    background: var(--backgroundColor);
+  }
+}
 .navigationWrapper.navigationSlider {
   height: 34px;
   margin-left: auto;
@@ -193,7 +241,7 @@ article a:not(.button):not(.anchor):hover,
 
 .navigationSlider .slidingNav ul li a {
   border: 0;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(var(--textColorRGB), 0.8);
   display: flex;
   font-size: 0.8em;
   font-weight: var(--fontWeightBold);
@@ -202,6 +250,7 @@ article a:not(.button):not(.anchor):hover,
   margin: 0;
   padding: 0;
   padding: 6px 10px;
+  transition: none;
 }
 
 .navigationSlider .slidingNav ul li > a:focus {
@@ -217,12 +266,12 @@ article a:not(.button):not(.anchor):hover,
 }
 
 .docsNavContainer .toc .navBreadcrumb {
-  background: white;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: var(--backgroundColor);
+  border-bottom: 1px solid var(--borderColor);
 }
 
 .tocActive .onPageNav {
-  background: #f9fafa;
+  background: var(--backgroundColor);
 }
 
 @media only screen and (max-width: 1023px) {
@@ -230,6 +279,16 @@ article a:not(.button):not(.anchor):hover,
     top: 107px;
     margin-bottom: 0;
   }
+}
+
+.toc .toggleNav .navToggle:before,
+.toc .toggleNav .navToggle:after {
+  border-color: rgb(var(--textColorRGB));
+}
+
+.toc .toggleNav .navToggle i:before,
+.toc .toggleNav .navToggle i:after {
+  border-color: transparent rgb(var(--textColorRGB));
 }
 
 /**
@@ -248,7 +307,7 @@ article a:not(.button):not(.anchor):hover,
 }
 
 h2.projectTitle {
-  color: black;
+  color: var(--headingTextColor);
   font-size: 3.5rem;
 }
 
@@ -261,8 +320,8 @@ h2.projectTitle small {
  * Footer
  */
 .nav-footer {
-  background: white;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  background: var(--backgroundColor);
+  border-top: 1px solid var(--borderColor);
   padding-top: 3em;
   padding-bottom: 3em;
 }
@@ -275,15 +334,15 @@ h2.projectTitle small {
 
 .nav-footer .sitemap h5,
 .nav-footer .sitemap a:hover {
-  color: rgba(0, 0, 0, 1);
+  color: rgba(var(--textColorRGB), 1);
 }
 
 .nav-footer .sitemap a {
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(var(--textColorRGB), 0.6);
 }
 
 .nav-footer .copyright {
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(var(--textColorRGB), 0.4);
   font-size: 0.8rem;
 }
 
@@ -307,13 +366,26 @@ h2.projectTitle small {
 }
 .nav-footer .sitemap a:hover,
 .nav-footer .sitemap a:focus {
-  color: black;
+  color: var(--textColor);
   outline: none;
 }
 
 /**
  * Article
  */
+
+article {
+  animation: fadeIn 300ms linear;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 article,
 .docs-prevnext {
@@ -352,12 +424,15 @@ header.postHeader:empty + article h1 {
  */
 @media (min-width: 1024px) {
   .docsNavContainer {
-    border-right: 1px solid rgba(0, 0, 0, 0.05);
+    border-right: 1px solid var(--borderColor);
   }
 }
 
 .navGroups {
   font-weight: var(--fontSizeNavGroups);
+}
+.toc .toggleNav .navGroup .navGroupCategoryTitle {
+  color: rgba(var(--textColorRGB), 0.7);
 }
 .toc .toggleNav .navGroup .navGroupCategoryTitle {
   font-size: 0.65rem;
@@ -369,13 +444,13 @@ header.postHeader:empty + article h1 {
 
 .toc .toggleNav ul li.navListItemActive a,
 .toc .toggleNav ul li.navListItemActive a:hover {
-  color: black;
+  color: var(--textColor);
   font-weight: var(--fontWeightBold);
 }
 
 .toc .toggleNav ul li a:hover,
 .toc .toggleNav ul li a:focus {
-  color: black;
+  color: var(--textColor);
   font-weight: var(--fontSizeNavGroups);
 }
 
@@ -392,11 +467,21 @@ ul.toc-headings > li {
 }
 
 .toc-headings > li > a.active {
-  color: #555;
+  color: rgba(var(--textColorRGB), 0.6);
   font-weight: bold;
+}
+
+.onPageNav a {
+  color: rgba(var(--textColorRGB), 0.6);
 }
 
 .onPageNav ul li {
   font-size: var(--fontSizeSideNav);
   margin-bottom: 5px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .onPageNav > .toc-headings {
+    border-color: var(--borderColor);
+  }
 }
