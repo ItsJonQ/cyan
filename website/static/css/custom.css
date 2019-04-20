@@ -17,6 +17,8 @@
   --linkColor: var(--textColor);
   --linkHoverColor: var(--textHoverColor);
 
+  --buttonRadius: 6px;
+
   --fontWeightBold: 700;
   --fontSize: 18px;
   --fontSizeCode: 0.78rem;
@@ -43,10 +45,11 @@ html {
 }
 
 html.dark {
-  --backgroundColorRGB: 0, 0, 0;
+  --backgroundColorRGB: 40, 40, 40;
   --textColorRGB: 255, 255, 255;
   --textColorHoverRGB: 0, 0, 0;
-  --borderContrast: 0.2;
+  --borderContrast: 0.3;
+  --borderColor: rgba(0, 0, 0, var(--borderContrast));
 }
 
 body {
@@ -117,7 +120,7 @@ article a:not(.button):not(.anchor):hover,
  */
 
 .button {
-  border-radius: 9999px;
+  border-radius: var(--buttonRadius);
   border: 1px solid transparent;
   border-color: transparent;
   color: var(--linkColor);
@@ -198,7 +201,8 @@ article a:not(.button):not(.anchor):hover,
 }
 
 .fixedHeaderContainer {
-  box-shadow: 0 1px 3px var(--borderColor), 0 2px 10px var(--borderColor);
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.05) inset,
+    0 1px 3px var(--borderColor), 0 2px 10px var(--borderColor);
 }
 
 .fixedHeaderContainer header > a {

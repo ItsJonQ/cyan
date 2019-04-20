@@ -13,8 +13,9 @@
 
       localStorage.setItem(
         'mode',
-        (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark',
+        localStorage.getItem('mode') === 'dark' ? 'light' : 'dark',
       )
+
       let isDarkMode = localStorage.getItem('mode') === 'dark'
 
       isDarkMode
@@ -27,7 +28,7 @@
 
   function renderDarkMode() {
     document.addEventListener('DOMContentLoaded', event => {
-      ;(localStorage.getItem('mode') || 'dark') === 'dark'
+      localStorage.getItem('mode') === 'dark'
         ? document.documentElement.classList.add('dark')
         : document.documentElement.classList.remove('dark')
     })
