@@ -141,6 +141,7 @@ article a:not(.button):not(.anchor):hover,
     box-shadow var(--animationDuration) ease,
     transform var(--animationDuration) ease;
   text-transform: initial;
+  will-change: box-shadow, transform;
 }
 
 .button:hover {
@@ -484,6 +485,7 @@ ul.toc-headings > li {
 .toc-headings > li > a {
   display: block;
   padding: 4px;
+  transition: none;
 }
 
 .toc-headings > li > a.active {

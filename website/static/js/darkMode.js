@@ -1,12 +1,15 @@
 ;(function() {
   function renderToggleDarkMode() {
     const navLinkNodes = Array.from(document.querySelectorAll('.nav-site a'))
-    const toggleNodes = navLinkNodes[navLinkNodes.length - 1]
+    const toggleNode = navLinkNodes[navLinkNodes.length - 1]
+
+    toggleNode.setAttribute('title', 'Toggle Dark Mode')
+
     let isDarkMode = localStorage.getItem('mode') === 'dark'
 
-    toggleNodes.addEventListener('click', toggleDarkMode)
+    toggleNode.addEventListener('click', toggleDarkMode)
 
-    toggleNodes.innerHTML = isDarkMode ? 'Light' : 'Dark'
+    toggleNode.innerHTML = isDarkMode ? 'Go Light' : 'Go Dark'
 
     function toggleDarkMode(event) {
       event.preventDefault()
@@ -22,16 +25,14 @@
         ? document.documentElement.classList.add('dark')
         : document.documentElement.classList.remove('dark')
 
-      toggleNodes.innerHTML = isDarkMode ? 'Light' : 'Dark'
+      toggleNode.innerHTML = isDarkMode ? 'Go Light' : 'Go Dark'
     }
   }
 
   function renderDarkMode() {
-    document.addEventListener('DOMContentLoaded', event => {
-      localStorage.getItem('mode') === 'dark'
-        ? document.documentElement.classList.add('dark')
-        : document.documentElement.classList.remove('dark')
-    })
+    localStorage.getItem('mode') === 'dark'
+      ? document.documentElement.classList.add('dark')
+      : document.documentElement.classList.remove('dark')
   }
 
   function initialize() {
