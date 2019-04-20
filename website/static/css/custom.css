@@ -19,9 +19,9 @@
 
   --fontWeightBold: 700;
   --fontSize: 18px;
-  --fontSizeCode: 14px;
-  --fontSizeNavGroups: 16px;
-  --fontSizeSideNav: 14px;
+  --fontSizeCode: 0.78rem;
+  --fontSizeNavGroups: 0.88rem;
+  --fontSizeSideNav: 0.78rem;
 
   --codeBackground: #141414;
 
@@ -38,6 +38,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: var(--fontSize);
+}
+
 html.dark {
   --backgroundColorRGB: 0, 0, 0;
   --textColorRGB: 255, 255, 255;
@@ -52,7 +56,7 @@ body {
   color: var(--textColor);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: var(--fontSize);
+  font-size: 1rem;
 }
 
 a {
@@ -244,7 +248,7 @@ article a:not(.button):not(.anchor):hover,
   border: 0;
   color: rgba(var(--textColorRGB), 0.8);
   display: flex;
-  font-size: 0.8em;
+  font-size: var(--fontSizeSideNav);
   font-weight: var(--fontWeightBold);
   height: 32px;
   line-height: 1.2em;
@@ -447,6 +451,10 @@ header.postHeader:empty + article h1 {
 .toc .toggleNav ul li.navListItemActive a:hover {
   color: var(--textColor);
   font-weight: var(--fontWeightBold);
+}
+
+.toc .toggleNav ul li a {
+  font-size: var(--fontSizeSideNav);
 }
 
 .toc .toggleNav ul li a:hover,

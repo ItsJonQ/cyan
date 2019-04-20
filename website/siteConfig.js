@@ -38,8 +38,8 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    { doc: 'introduction/getting-started', label: 'Getting Started' },
-    { href: '#', label: 'Dark Mode' },
+    { doc: 'introduction/getting-started', label: 'Get Started' },
+    { href: '#', label: 'Dark' },
   ],
 
   // If you have users set above, you add it here:

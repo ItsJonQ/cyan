@@ -6,7 +6,7 @@
 
     toggleNodes.addEventListener('click', toggleDarkMode)
 
-    toggleNodes.innerHTML = isDarkMode ? 'Go Light' : 'Go Dark'
+    toggleNodes.innerHTML = isDarkMode ? 'Light' : 'Dark'
 
     function toggleDarkMode(event) {
       event.preventDefault()
@@ -21,7 +21,7 @@
         ? document.documentElement.classList.add('dark')
         : document.documentElement.classList.remove('dark')
 
-      toggleNodes.innerHTML = isDarkMode ? 'Go Light' : 'Go Dark'
+      toggleNodes.innerHTML = isDarkMode ? 'Light' : 'Dark'
     }
   }
 
