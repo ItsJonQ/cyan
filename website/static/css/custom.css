@@ -99,18 +99,16 @@ h6 {
 /**
  * Link
  */
-article a:not(.button):not(.anchor),
-.nav-footer .copyright a {
+article a:not(.button):not(.anchor) {
   background: rgba(var(--brandColorRGB), 0.1);
   border-bottom: 2px solid var(--brandColor);
   color: var(--linkColor);
   transition: none;
 }
-article a:not(.button):not(.anchor):hover,
-.nav-footer .copyright a:hover {
+article a:not(.button):not(.anchor):hover {
   background: rgba(var(--brandColorRGB), 1);
   border-bottom: 2px solid var(--brandColor);
-  color: var(--linkColor);
+  color: var(--linkHoverColor);
 }
 
 .navBreadcrumb a,
@@ -349,13 +347,15 @@ h2.projectTitle small {
   }
 }
 
-.nav-footer .sitemap h5,
-.nav-footer .sitemap a:hover {
-  color: rgba(var(--textColorRGB), 1);
+.nav-footer .sitemap a,
+.copyright a {
+  color: rgba(var(--textColorRGB), 0.6);
 }
 
-.nav-footer .sitemap a {
-  color: rgba(var(--textColorRGB), 0.6);
+.nav-footer .sitemap h5,
+.nav-footer .sitemap a:hover,
+.copyright a:hover {
+  color: rgba(var(--textColorRGB), 1);
 }
 
 .nav-footer .copyright {
@@ -473,6 +473,20 @@ header.postHeader:empty + article h1 {
 .toc .toggleNav ul li a:focus {
   color: var(--textColor);
   font-weight: var(--fontSizeNavGroups);
+}
+
+/**
+ * Article / Hash Link
+ */
+.hash-link {
+  border: none !important;
+  background: none !important;
+  opacity: 0.5;
+}
+
+.hash-link svg {
+  position: relative;
+  top: -3px;
 }
 
 /**
