@@ -4,7 +4,9 @@
   --backgroundColorRGB: 255, 255, 255;
   --textColorRGB: 0, 0, 0;
   --textColorHoverRGB: 0, 0, 0;
+  --shadowRGB: 0, 0, 0;
   --borderContrast: 0.1;
+  --buttonBorderContrast: 0.08;
 
   --brandColor: rgb(var(--brandColorRGB));
   --backgroundColor: rgb(var(--backgroundColorRGB));
@@ -17,7 +19,7 @@
   --linkColor: var(--textColor);
   --linkHoverColor: var(--textHoverColor);
 
-  --buttonRadius: 6px;
+  --buttonRadius: 4px;
 
   --fontWeightBold: 700;
   --fontSize: 18px;
@@ -49,6 +51,7 @@ html.dark {
   --textColorRGB: 255, 255, 255;
   --textColorHoverRGB: 0, 0, 0;
   --borderContrast: 0.3;
+  --buttonBorderContrast: 0.2;
   --borderColor: rgba(0, 0, 0, var(--borderContrast));
 }
 
@@ -107,7 +110,7 @@ article a:not(.button):not(.anchor):hover,
 .nav-footer .copyright a:hover {
   background: rgba(var(--brandColorRGB), 1);
   border-bottom: 2px solid var(--brandColor);
-  color: var(--linkHoverColor);
+  color: var(--linkColor);
 }
 
 .navBreadcrumb a,
@@ -120,14 +123,16 @@ article a:not(.button):not(.anchor):hover,
  */
 
 .button {
+  background: var(--backgroundColor);
   border-radius: var(--buttonRadius);
   border: 1px solid transparent;
   border-color: transparent;
   color: var(--linkColor);
   font-size: 1rem;
   box-shadow: 0 4px 6px var(--borderColor),
-    0 1px 3px 0px rgba(var(--textColorRGB), 0.08),
-    0 0 0 1px rgba(var(--textColorRGB), 0.08);
+    0 1px 3px 0px rgba(var(--shadowRGB), var(--buttonBorderContrast)),
+    0 0 0 1px rgba(var(--shadowRGB), var(--buttonBorderContrast)),
+    0 0 0 1px rgba(255, 255, 255, var(--buttonBorderContrast));
   font-weight: var(--fontWeightBold);
   padding: 16px 2.5em 17px;
   line-height: 1;
@@ -137,16 +142,18 @@ article a:not(.button):not(.anchor):hover,
 }
 
 .button:hover {
+  background: var(--backgroundColor);
   box-shadow: 0 7px 14px var(--borderColor),
-    0 3px 6px rgba(var(--textColorRGB), 0.08),
-    0 0 0 1px rgba(var(--textColorRGB), 0.08);
-  color: var(--linkHoverColor);
-  background: var(--brandColor);
+    0 3px 6px rgba(var(--shadowRGB), var(--buttonBorderContrast)),
+    0 0 0 1px rgba(var(--shadowRGB), var(--buttonBorderContrast)),
+    0 0 0 1px rgba(255, 255, 255, var(--buttonBorderContrast));
+  color: var(--linkColor);
+  border-color: var(--brandColor);
   transform: translateY(-2px);
 }
 
 .button:hover:active {
-  color: var(--linkHoverColor);
+  color: var(--linkColor);
   transform: translateY(2px);
 }
 
@@ -495,4 +502,57 @@ ul.toc-headings > li {
   .onPageNav > .toc-headings {
     border-color: var(--borderColor);
   }
+}
+
+/**
+ * Article / Prev/Next
+ */
+.docs-prevnext {
+  display: flex;
+}
+.docs-prevnext .button {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  float: none;
+  font-weight: normal;
+  padding: 20px;
+  width: 100%;
+}
+.docs-prevnext .button:hover,
+.docs-prevnext .button:active,
+.docs-prevnext .button:focus {
+  background: var(--backgroundColor);
+  border-color: var(--brandColor);
+  color: var(--textColor);
+}
+
+.docs-prevnext .button + .button {
+  margin-left: 30px;
+}
+.docs-prevnext .docs-prev {
+  text-align: right;
+}
+.docs-prevnext .docs-next {
+  text-align: left;
+}
+
+.docs-prevnext .docs-prev > span:last-of-type,
+.docs-prevnext .docs-next > span:first-of-type {
+  font-weight: var(--fontWeightBold);
+  flex: 1;
+}
+
+.docs-prevnext .docs-prev > span:last-of-type::before,
+.docs-prevnext .docs-next > span:first-of-type::before {
+  content: 'Previous';
+  display: block;
+  font-size: 0.7rem;
+  font-weight: normal;
+  opacity: 0.4;
+  margin: 0 0 6px;
+}
+
+.docs-prevnext .docs-next > span:first-of-type::before {
+  content: 'Next';
 }
