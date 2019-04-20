@@ -52,7 +52,7 @@ const siteConfig = {
   /* Colors for website */
   colors: {
     primaryColor: '#0077CC',
-    secondaryColor: '#1292EE',
+    secondaryColor: '#0055ff',
   },
 
   /* Custom fonts for website */
@@ -68,6 +68,7 @@ const siteConfig = {
     ]
   },
   */
+  stylesheets: ['https://fonts.googleapis.com/css?family=Roboto:300,400,700'],
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
   copyright: `Copyright © ${new Date().getFullYear()} Help Scout`,
