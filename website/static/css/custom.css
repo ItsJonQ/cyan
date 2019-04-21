@@ -505,19 +505,6 @@ header.postHeader:empty + article h1 {
 }
 
 /**
- * Article / Hash Link
- */
-.hash-link {
-  border: none !important;
-  background: none !important;
-}
-
-.hash-link svg {
-  position: relative;
-  top: -1px;
-}
-
-/**
  * Article / Table of Contents
  */
 @media only screen and (max-width: 1023px) {
@@ -574,11 +561,10 @@ ul.toc-headings > li {
  * Article / Hash Links
  */
 .hash-link {
-  opacity: 0.5;
   background: none !important;
   border: none !important;
   position: relative;
-  top: -3px;
+  top: -2px;
 }
 .hash-link:hover {
   opacity: 1;
