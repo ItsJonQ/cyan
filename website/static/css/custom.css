@@ -73,6 +73,11 @@ a {
   transition: all var(--animationDuration) ease;
 }
 
+strong,
+b {
+  font-weight: 700;
+}
+
 table {
   font-size: var(--fontSizeTable);
 }
@@ -91,6 +96,12 @@ h6 {
   color: var(--headingTextColor);
   margin-top: 60px;
   margin-bottom: 20px;
+}
+
+h4,
+h5,
+h6 {
+  margin-top: 30px;
 }
 
 hr {
