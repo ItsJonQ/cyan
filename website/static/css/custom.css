@@ -296,6 +296,7 @@ article a:not(.button):not(.anchor):hover {
 .docsNavContainer .toc .navBreadcrumb {
   background: var(--backgroundColor);
   border-bottom: 1px solid var(--borderColor);
+  z-index: 1;
 }
 
 .tocActive .onPageNav {
