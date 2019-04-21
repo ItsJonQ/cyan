@@ -7,7 +7,7 @@ hide_title: true
 
 # Events
 
-[Events](https://developer.mozilla.org/en-US/docs/Web/API/Event) can be triggered on your React components, as well as the `window` or `document`, just like in the browser.
+[Events](https://developer.mozilla.org/en-US/docs/Web/API/Event) can be triggered on the DOM Elements rendered by your React components.
 
 Under the hood, Cyan uses [`dom-testing-library`](https://testing-library.com/docs/dom-testing-library/api-events) to fire the events.
 
