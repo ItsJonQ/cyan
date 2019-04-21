@@ -2,6 +2,7 @@
 // https://github.com/facebook/Docusaurus/issues/1024#issuecomment-429031703
 
 ;(function() {
+  const TIMEOUT = 0
   const OFFSET = 10
   let timer
   let headingsCache
@@ -38,7 +39,7 @@
           headings[i].className = ''
         }
       }
-    }, 100)
+    }, TIMEOUT)
   }
   document.addEventListener('scroll', onScroll)
   document.addEventListener('resize', onScroll)

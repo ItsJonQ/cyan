@@ -50,6 +50,7 @@ html.dark {
   --backgroundColorRGB: 40, 40, 40;
   --textColorRGB: 255, 255, 255;
   --textColorHoverRGB: 0, 0, 0;
+  --linkHoverColor: rgba(255, 255, 255, 1);
   --borderContrast: 0.3;
   --buttonBorderContrast: 0.2;
   --borderColor: rgba(0, 0, 0, var(--borderContrast));
@@ -99,15 +100,13 @@ h6 {
 /**
  * Link
  */
-article a:not(.button):not(.anchor),
-.nav-footer .copyright a {
+article a:not(.button):not(.anchor) {
   background: rgba(var(--brandColorRGB), 0.1);
   border-bottom: 2px solid var(--brandColor);
   color: var(--linkColor);
   transition: none;
 }
-article a:not(.button):not(.anchor):hover,
-.nav-footer .copyright a:hover {
+article a:not(.button):not(.anchor):hover {
   background: rgba(var(--brandColorRGB), 1);
   border-bottom: 2px solid var(--brandColor);
   color: var(--linkColor);
@@ -349,13 +348,15 @@ h2.projectTitle small {
   }
 }
 
-.nav-footer .sitemap h5,
-.nav-footer .sitemap a:hover {
-  color: rgba(var(--textColorRGB), 1);
+.nav-footer .sitemap a,
+.copyright a {
+  color: rgba(var(--textColorRGB), 0.6);
 }
 
-.nav-footer .sitemap a {
-  color: rgba(var(--textColorRGB), 0.6);
+.nav-footer .sitemap h5,
+.nav-footer .sitemap a:hover,
+.copyright a:hover {
+  color: rgba(var(--textColorRGB), 1);
 }
 
 .nav-footer .copyright {
@@ -506,6 +507,20 @@ ul.toc-headings > li {
   .onPageNav > .toc-headings {
     border-color: var(--borderColor);
   }
+}
+
+/**
+ * Article / Hash Links
+ */
+.hash-link {
+  opacity: 0.5;
+  background: none !important;
+  border: none !important;
+  position: relative;
+  top: -3px;
+}
+.hash-link:hover {
+  opacity: 1;
 }
 
 /**

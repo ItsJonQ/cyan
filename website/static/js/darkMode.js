@@ -37,9 +37,7 @@
 
   function initialize() {
     renderDarkMode()
-    requestAnimationFrame(() => {
-      renderToggleDarkMode()
-    })
+    document.addEventListener('DOMContentLoaded', renderToggleDarkMode)
   }
 
   initialize()
