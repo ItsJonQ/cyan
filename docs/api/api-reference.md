@@ -9,7 +9,7 @@ hide_title: true
 
 ## Selectors
 
-- [Selector](./selectors.md)
+- [Selectors](./selectors.md)
 
 ## Interaction
 
