@@ -70,7 +70,6 @@ const siteConfig = {
     ]
   },
   */
-  // stylesheets: ['https://fonts.googleapis.com/css?family=Roboto:300,400,700'],
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
   copyright: `Copyright © ${new Date().getFullYear()} Help Scout`,
@@ -84,9 +83,12 @@ const siteConfig = {
   // Add custom scripts here that would be placed in <script> tags.
   scripts: [
     'https://buttons.github.io/buttons.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js',
     '/js/scrollspy.js',
     '/js/darkMode.js',
+    '/js/copy-code-button.js',
   ],
+  stylesheets: ['/css/code-block-buttons.css'],
 
   // On page navigation for the current documentation page.
   onPageNav: 'separate',
