@@ -597,8 +597,9 @@ ul.toc-headings > li {
  * Article / Prev/Next
  */
 .docs-prevnext {
-  display: flex;
+  display: block;
 }
+
 .docs-prevnext .button {
   align-items: center;
   display: flex;
@@ -617,7 +618,7 @@ ul.toc-headings > li {
 }
 
 .docs-prevnext .button + .button {
-  margin-left: 30px;
+  margin-left: 0px;
 }
 .docs-prevnext .docs-prev {
   text-align: right;
@@ -644,4 +645,13 @@ ul.toc-headings > li {
 
 .docs-prevnext .docs-next > span:first-of-type::before {
   content: 'Next';
+}
+
+@media (min-width: 768px) {
+  .docs-prevnext {
+    display: flex;
+  }
+  .docs-prevnext .button + .button {
+    margin-left: 30px;
+  }
 }
