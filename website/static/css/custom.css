@@ -385,7 +385,6 @@ h2.projectTitle small {
 .nav-footer .sitemap a:hover,
 .nav-footer .sitemap a:focus {
   color: var(--textColor);
-  outline: none;
 }
 
 /**
