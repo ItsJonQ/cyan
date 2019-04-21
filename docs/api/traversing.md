@@ -9,13 +9,36 @@ hide_title: true
 
 Targeting DOM Elements from the main DOM element collection defined by a [selectors](./selectors) method like `cy.get()`. Cyan's traversal methods were designed to emulate [Cypress's commands](https://docs.cypress.io/api/api/table-of-contents.html).
 
+Cyan's traversal methods are **chainable** (similar to [jQuery](https://api.jquery.com/category/traversing/).
+
+#### Example
+
+```js
+test('Can render nested list item with a link, for non-active items', () => {
+  // Rendering a sample list component.
+  cy.render(<SomeListComponent activeIndex={3} />)
+
+  // Using Cyan's travesal methods, we'll:
+  // 1. Find all of the <a> Elements from our <ul> component
+  // 2. Filter out the active item
+  // 3. Find the first Element
+  const el = cy
+    .get('ul > li a')
+    .not('.active')
+    .first()
+
+  // Assert against the first Element
+  expect(el.attr('data-index')).toEqual('0')
+})
+```
+
 ## children
 
-`Function(): Cyan`
+`Function(): Cyan instance`
 
 Get the children DOM elements from the main DOM element.
 
-#### Examples
+#### Example
 
 ```javascript
 cy.get('ul').children()
@@ -23,7 +46,7 @@ cy.get('ul').children()
 
 ## closest
 
-`Function(selector: string): Cyan`
+`Function(selector: string): Cyan instance`
 
 Get the first closest DOM element with a matching selector from the main DOM element.
 
@@ -31,7 +54,7 @@ Get the first closest DOM element with a matching selector from the main DOM ele
 
 - `selector` `{string}` A selector used to find a matching DOM element.
 
-#### Examples
+#### Example
 
 ```javascript
 cy.get('div').closest('main')
@@ -39,7 +62,7 @@ cy.get('div').closest('main')
 
 ## each
 
-`Function(callback: Function<Element>): Cyan`
+`Function(callback: Function<Element>): Cyan instance`
 
 Iterate through the main DOM elements.
 
@@ -47,7 +70,7 @@ Iterate through the main DOM elements.
 
 - `callback` `{Function<Element>}` A callback invoked with the iterating DOM elements.
 
-#### Examples
+#### Example
 
 ```javascript
 cy.get('div').each((node, index) => {
@@ -57,7 +80,7 @@ cy.get('div').each((node, index) => {
 
 ## eq
 
-`Function(index: number): Cyan`
+`Function(index: number): Cyan instance`
 
 Get a DOM element based on it's index number.
 
@@ -65,7 +88,7 @@ Get a DOM element based on it's index number.
 
 - `index` `{number}` A number indicating the index of the element to get.
 
-#### Examples
+#### Example
 
 ```javascript
 cy.get('ul > li').eq(2)
@@ -73,7 +96,7 @@ cy.get('ul > li').eq(2)
 
 ## filter
 
-`Function(selector: string): Cyan`
+`Function(selector: string): Cyan instance`
 
 Get the DOM elements that match a specific selector.
 
@@ -81,7 +104,7 @@ Get the DOM elements that match a specific selector.
 
 - `selector` `{string}` A selector used for filter matching.
 
-#### Examples
+#### Example
 
 ```javascript
 cy.get('ul > li').filter('.item')
@@ -89,7 +112,7 @@ cy.get('ul > li').filter('.item')
 
 ## find
 
-`Function(selector: string): Cyan`
+`Function(selector: string): Cyan instance`
 
 Get descendent DOM elements that match a specific selector.
 
@@ -97,7 +120,7 @@ Get descendent DOM elements that match a specific selector.
 
 - `selector` `{string}` A selector used for descendent matching.
 
-#### Examples
+#### Example
 
 ```javascript
 cy.get('ul').find('li.item')
@@ -107,7 +130,7 @@ cy.get('ul').find('li.item')
 
 Get the first DOM element from the main DOM elements.
 
-#### Examples
+#### Example
 
 ```javascript
 cy.get('ul > li').first()
@@ -117,7 +140,7 @@ cy.get('ul > li').first()
 
 Get the last DOM element from the main DOM elements.
 
-#### Examples
+#### Example
 
 ```javascript
 cy.get('ul > li').last()
@@ -127,7 +150,7 @@ cy.get('ul > li').last()
 
 Get the next sibling DOM element from the main DOM element.
 
-#### Examples
+#### Example
 
 ```javascript
 cy.get('ul > li')
@@ -137,7 +160,7 @@ cy.get('ul > li')
 
 ## not
 
-`Function(selector: string): Cyan`
+`Function(selector: string): Cyan instance`
 
 Filter DOM elements from the main DOM elements.
 
@@ -145,7 +168,7 @@ Filter DOM elements from the main DOM elements.
 
 - `selector` `{string}` A selector used for filter matching.
 
-#### Examples
+#### Example
 
 ```javascript
 cy.get('ul > li').not('.item')
@@ -155,7 +178,7 @@ cy.get('ul > li').not('.item')
 
 Get the parent DOM element from the main DOM element.
 
-#### Examples
+#### Example
 
 ```javascript
 cy.get('li').parent()
@@ -165,7 +188,7 @@ cy.get('li').parent()
 
 Get the previous sibling DOM element from the main DOM element.
 
-#### Examples
+#### Example
 
 ```javascript
 cy.get('ul > li')
