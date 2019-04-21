@@ -6,7 +6,7 @@
     ],
     "API": [
       "api/api-reference",
-      "api/selectors",
+      "api/queries",
       "api/traversing",
       "api/actions",
       "api/events",

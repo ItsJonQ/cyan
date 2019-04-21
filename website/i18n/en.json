@@ -33,9 +33,9 @@
         "title": "Mock Timers",
         "sidebar_label": "Mock Timers"
       },
-      "api/selectors": {
-        "title": "Selectors",
-        "sidebar_label": "Selectors"
+      "api/queries": {
+        "title": "Queries",
+        "sidebar_label": "Queries"
       },
       "api/traversing": {
         "title": "Traversing",
