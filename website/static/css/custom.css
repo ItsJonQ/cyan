@@ -323,8 +323,7 @@ article a:not(.button):not(.anchor):hover {
  * Home
  */
 .homeContainer .homeWrapper {
-  padding-bottom: 5em;
-  padding-top: 3em;
+  padding: 3em 20px 5em;
 }
 
 @media (min-width: 768px) {
@@ -336,7 +335,13 @@ article a:not(.button):not(.anchor):hover {
 
 h2.projectTitle {
   color: var(--headingTextColor);
-  font-size: 3.5rem;
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  h2.projectTitle {
+    font-size: 3.5rem;
+  }
 }
 
 h2.projectTitle small {
