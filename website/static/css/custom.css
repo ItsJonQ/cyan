@@ -510,7 +510,6 @@ header.postHeader:empty + article h1 {
 .hash-link {
   border: none !important;
   background: none !important;
-  opacity: 0.5;
 }
 
 .hash-link svg {
