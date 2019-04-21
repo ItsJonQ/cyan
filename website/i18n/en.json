@@ -5,6 +5,38 @@
     "previous": "Previous",
     "tagline": "Cypress-like Testing for React + JSDOM",
     "docs": {
+      "api/actions": {
+        "title": "Actions",
+        "sidebar_label": "Actions"
+      },
+      "api/api-reference": {
+        "title": "API Reference",
+        "sidebar_label": "API Reference"
+      },
+      "api/assertions": {
+        "title": "Assertions",
+        "sidebar_label": "Assertions"
+      },
+      "api/debugging": {
+        "title": "Debugging",
+        "sidebar_label": "Debugging"
+      },
+      "api/events": {
+        "title": "Events",
+        "sidebar_label": "Events"
+      },
+      "api/mock-promises": {
+        "title": "Mock Promises",
+        "sidebar_label": "Mock Promises"
+      },
+      "api/mock-timers": {
+        "title": "Mock Timers",
+        "sidebar_label": "Mock Timers"
+      },
+      "api/selectors": {
+        "title": "Selectors",
+        "sidebar_label": "Selectors"
+      },
       "introduction/getting-started": {
         "title": "Getting Started",
         "sidebar_label": "Getting Started"
@@ -16,10 +48,12 @@
     },
     "links": {
       "Get Started": "Get Started",
+      "API": "API",
       "Go Dark": "Go Dark"
     },
     "categories": {
-      "Introduction": "Introduction"
+      "Introduction": "Introduction",
+      "API": "API"
     }
   },
   "pages-strings": {

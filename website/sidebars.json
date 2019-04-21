@@ -3,6 +3,16 @@
     "Introduction": [
       "introduction/getting-started",
       "introduction/installation"
+    ],
+    "API": [
+      "api/api-reference",
+      "api/selectors",
+      "api/actions",
+      "api/events",
+      "api/assertions",
+      "api/debugging",
+      "api/mock-promises",
+      "api/mock-timers"
     ]
   }
 }
