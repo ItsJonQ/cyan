@@ -84,7 +84,7 @@ beforeEach(() => {
 })
 ```
 
-Mock Promises are added to a special queue. Once there, they can be run immediately using [`cy.runPromisesImmediately()`](#runPromisesImmediately) or sequentially using [`cy.runNextPromise()`](#runNextPromise).
+Mock Promises are added to a special queue. Once there, they can be run immediately using [`cy.runPromisesImmediately()`](#runpromisesimmediately) or sequentially using [`cy.runNextPromise()`](#runnextpromise).
 
 ## clearFakePromises
 
