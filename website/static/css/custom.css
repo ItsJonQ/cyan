@@ -29,7 +29,10 @@
   --fontSizeTable: 0.88rem;
   --fontSizeNavHeading: 0.65rem;
 
-  --codeBackground: #141414;
+  --codeBackground: rgba(27, 31, 35, 0.05);
+  --codeExampleBackground: #141414;
+
+  --tableBorderColor: #ddd;
 
   --wrapperMaxWidth: 1280px;
   --mainNavHeight: 60px;
@@ -53,9 +56,11 @@ html.dark {
   --textColorRGB: 255, 255, 255;
   --textColorHoverRGB: 0, 0, 0;
   --linkHoverColor: rgba(0, 0, 0, 1);
+  --borderColor: rgba(0, 0, 0, var(--borderContrast));
   --borderContrast: 0.5;
   --buttonBorderContrast: 0.2;
-  --borderColor: rgba(0, 0, 0, var(--borderContrast));
+  --codeBackground: rgba(227, 231, 235, 0.1);
+  --tableBorderColor: #444;
 }
 
 body {
@@ -85,6 +90,15 @@ table {
 p,
 pre {
   margin-bottom: 1.5em;
+}
+
+code {
+  background: var(--codeBackground);
+}
+
+table th,
+table td {
+  border-color: var(--tableBorderColor);
 }
 
 h1,
@@ -119,6 +133,15 @@ hr {
 }
 .hash-link:hover path {
   fill: var(--linkColor);
+}
+
+/**
+ * Responsive
+ */
+@media (max-width: 540px) {
+  .u-hide\@mobile {
+    display: none;
+  }
 }
 
 /**
@@ -459,7 +482,7 @@ header.postHeader:empty + article h1 {
 }
 
 .hljs {
-  background: var(--codeBackground);
+  background: var(--codeExampleBackground);
   border-radius: 4px;
   font-size: var(--fontSizeCode);
   padding: 20px;

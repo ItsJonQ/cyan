@@ -1,4 +1,11 @@
 ;(function() {
+  function renderToggleContent(node, mode) {
+    node.innerHTML = `
+      <span class="u-hide@mobile">Go&nbsp;</span>
+      <span>${mode}</span>
+    `
+  }
+
   function renderToggleDarkMode() {
     const navLinkNodes = Array.from(document.querySelectorAll('.nav-site a'))
     const toggleNode = navLinkNodes[navLinkNodes.length - 1]
@@ -9,7 +16,7 @@
 
     toggleNode.addEventListener('click', toggleDarkMode)
 
-    toggleNode.innerHTML = isDarkMode ? 'Go Light' : 'Go Dark'
+    renderToggleContent(toggleNode, isDarkMode ? 'Light' : 'Dark')
 
     function toggleDarkMode(event) {
       event.preventDefault()
@@ -25,7 +32,7 @@
         ? document.documentElement.classList.add('dark')
         : document.documentElement.classList.remove('dark')
 
-      toggleNode.innerHTML = isDarkMode ? 'Go Light' : 'Go Dark'
+      renderToggleContent(toggleNode, isDarkMode ? 'Light' : 'Dark')
     }
   }
 

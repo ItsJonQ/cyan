@@ -22,11 +22,11 @@ Under the hood, Cyan uses [`dom-testing-library`](https://testing-library.com/do
 To fire an event, first `.get()` an HTML element, then call the event method you wish to trigger.
 
 ```jsx
-test('Zordon can be focused', () => {
+test('SampleInput can be focused', () => {
   const spy = jest.fn()
-  cy.render(<Zordon onFocus={spy} />)
+  cy.render(<SampleInput onFocus={spy} />)
 
-  cy.get('.zordon').focus()
+  cy.get('.SampleInput').focus()
 })
 ```
 
@@ -108,3 +108,7 @@ The following events can be triggered as methods with Cyan:
 - `volumeChange`
 - `waiting`
 - `wheel`
+
+## See Also
+
+- [Actions](./actions)

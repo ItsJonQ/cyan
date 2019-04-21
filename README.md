@@ -53,4 +53,4 @@ test('Can open/close a Modal', () => {
 
 ## Documentation
 
-- [API](./docs/api)
+For additional information, check out [our documentation](https://cyan-testing.netlify.com)!

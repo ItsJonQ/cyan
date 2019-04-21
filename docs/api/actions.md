@@ -7,4 +7,75 @@ hide_title: true
 
 # Actions
 
-Coming soon!
+Actions are methods that interact with the DOM Elements rendered by your React components.. These are typically used with form based elements, like `input`, `button`, or `textarea`.
+
+## check
+
+`Function(): void`
+
+Checks a DOM element. Typically used for `<input />`.
+
+#### Examples
+
+```javascript
+cy.get('input[type=checkbox]').check()
+```
+
+## clear
+
+`Function(): void`
+
+Clear the value of a DOM element. Typically used for `<input />`.
+
+#### Examples
+
+```javascript
+cy.get('input[type=text]').clear()
+```
+
+## trigger
+
+Triggers an [Event](./events) for a DOM element.
+
+#### Parameters
+
+- `event` `{string}` The name of the event.
+
+#### Examples
+
+```javascript
+cy.get('textarea').trigger('focus')
+```
+
+## type
+
+`Function(): void`
+
+Types characters/commands into a DOM element. Typically used for `<input />`.
+This method triggers `keyDown` and `keyUp` [events](./events).
+
+#### Parameters
+
+- `value` `{string}` The characters/commands to type.
+
+#### Examples
+
+```javascript
+cy.get('input[type=text]').type('Hello')
+```
+
+## uncheck
+
+`Function(): void`
+
+Unchecks a DOM element. Typically used for `<input />`.
+
+#### Examples
+
+```javascript
+cy.get('input[type=checkbox]').uncheck()
+```
+
+## See Also
+
+- [Events](./events)

@@ -10,6 +10,7 @@ hide_title: true
 ## Selectors
 
 - [Selectors](./selectors.md)
+- [Traversing](./traversing.md)
 
 ## Interaction
 

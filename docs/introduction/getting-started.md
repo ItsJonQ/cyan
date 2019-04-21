@@ -24,7 +24,7 @@ For additional details, check out our [installation](./installation) guides.
 ## Basic Example
 
 ```jsx
-// __tests__/RedRanger.test.js
+// __tests__/Sample.test.js
 import React from 'react'
 import { cy } from '@helpscout/cyan'
 
@@ -32,59 +32,57 @@ import { cy } from '@helpscout/cyan'
  * This is a very simple example component. Typically, your
  * component would live outside the test file, and imported.
  */
-class RedRanger extends React.Component {
+class Sample extends React.Component {
   state = {
-    isMorphin: false,
+    isReady: false,
   }
 
   toggleMorphin() {
     this.setState({
-      isMorphin: !this.state.isMorphin,
+      isReady: !this.state.isReady,
     })
   }
 
   render() {
     return (
-      <div className="red">
-        <button onClick={this.toggleMorphin}>{`It's Morphin' Time!`}</button>
-        <p>{this.state.isMorphin ? 'Red Ranger' : 'Jason Lee Scott'}</p>
+      <div className="sample-content">
+        <button onClick={this.toggleMorphin}>{`Load`}</button>
+        <p>{this.state.isReady ? 'Ready!' : 'Not Ready'}</p>
       </div>
     )
   }
 }
 
-// Creating our test for the <RedRanger /> component with Jest
-describe('RedRanger', () => {
-  test('Can morph when button is clicked', () => {
-    // We're rendering our <RedRanger /> component.
+// Creating our test for the <Sample /> component with Jest
+describe('Sample', () => {
+  test('Can load when button is clicked', () => {
+    // We're rendering our <Sample /> component.
     // This renders your component
     // with ReactDOM.render() and is injected into JSDOM's
     // document.body HTML node.
-    cy.render(<RedRanger />)
+    cy.render(<Sample />)
 
     // Our first assertion!
     //
-    // We're finding our RedRanger DOM node using the
-    // '.red' selector.
+    // We're finding our Sample DOM node using the
+    // '.sample-content' selector.
     //
-    // We're testing to make sure that <RedRanger /> renders
-    // the text content containing the word "Jason".
+    // We're testing to make sure that <Sample /> renders
+    // the text content containing the word "Not Ready".
     //
-    // Jason hasn't morphed yet.
-    expect(cy.get('.red').text()).toContain('Jason')
+    // Not Ready hasn't loaded yet.
+    expect(cy.get('.sample-content').text()).toContain('Not Ready')
 
-    // We're checking to make sure we have our Morphin button!
+    // We're checking to make sure we have our Load button!
     expect(cy.get('button').exists()).toBeTruthy()
-    expect(cy.get('button').text()).toContain(`Morphin' Time!`)
 
-    // It's Morphin' Time!
     // Let's click the button.
     cy.get('button').click()
 
-    // Now we can test that our component renders a "Red Ranger"
-    // "Red Ranger" has now replaced "Jason".
-    expect(cy.get('.red').text()).toContain('Red Ranger')
-    expect(cy.get('.red').text()).not.toContain('Jason')
+    // Now we can test that our component renders a "Ready!"
+    // "Ready!" has now replaced "Not Ready".
+    expect(cy.get('.sample-content').text()).toContain('Ready!')
+    expect(cy.get('.sample-content').text()).not.toContain('Not Ready')
   })
 })
 ```

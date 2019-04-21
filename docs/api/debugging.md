@@ -19,14 +19,14 @@ No need to call `console.log`. The `debug()` method does this automatically!
 #### Example
 
 ```jsx
-const BlueRanger = () => <div className="blue-ranger" />
+const SampleComponent = () => <div className="sample-component" />
 
 test('My component can render', () => {
-  cy.render(<BlueRanger />)
+  cy.render(<SampleComponent />)
 
   cy.debug()
   // The following is logged in your Jest test runner:
-  // <div class="blue-ranger"></div>
+  // <div class="sample-component"></div>
 })
 ```
 
@@ -40,12 +40,12 @@ For debugging, we recommend you use [`debug()`](#debug).
 #### Example
 
 ```js
-const BlueRanger = () => <div className="blue-ranger" />
+const SampleComponent = () => <div className="sample-component" />
 
 test('My component can render', () => {
-  cy.render(<BlueRanger />)
+  cy.render(<SampleComponent />)
 
   cy.html()
-  // <div class="blue-ranger"></div>
+  // <div class="sample-component"></div>
 })
 ```
