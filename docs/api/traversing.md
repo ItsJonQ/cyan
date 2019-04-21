@@ -195,3 +195,7 @@ cy.get('ul > li')
   .eq(3)
   .prev()
 ```
+
+## See Also
+
+- [Queries](./queries)

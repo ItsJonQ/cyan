@@ -7,7 +7,7 @@ hide_title: true
 
 # Actions
 
-Actions are methods that interact with the DOM Elements rendered by your React components.. These are typically used with form based elements, like `input`, `button`, or `textarea`.
+Actions are methods that interact with the DOM Elements rendered by your React components. These are typically used with form based elements, like `input`, `button`, or `textarea`.
 
 ## check
 
@@ -15,7 +15,7 @@ Actions are methods that interact with the DOM Elements rendered by your React c
 
 Checks a DOM element. Typically used for `<input />`.
 
-#### Examples
+#### Example
 
 ```javascript
 cy.get('input[type=checkbox]').check()
@@ -27,7 +27,7 @@ cy.get('input[type=checkbox]').check()
 
 Clear the value of a DOM element. Typically used for `<input />`.
 
-#### Examples
+#### Example
 
 ```javascript
 cy.get('input[type=text]').clear()
@@ -41,7 +41,7 @@ Triggers an [Event](./events) for a DOM element.
 
 - `event` `{string}` The name of the event.
 
-#### Examples
+#### Example
 
 ```javascript
 cy.get('textarea').trigger('focus')
@@ -58,7 +58,7 @@ This method triggers `keyDown` and `keyUp` [events](./events).
 
 - `value` `{string}` The characters/commands to type.
 
-#### Examples
+#### Example
 
 ```javascript
 cy.get('input[type=text]').type('Hello')
@@ -70,7 +70,7 @@ cy.get('input[type=text]').type('Hello')
 
 Unchecks a DOM element. Typically used for `<input />`.
 
-#### Examples
+#### Example
 
 ```javascript
 cy.get('input[type=checkbox]').uncheck()
