@@ -7,6 +7,7 @@
     "API": [
       "api/api-reference",
       "api/selectors",
+      "api/traversing",
       "api/actions",
       "api/events",
       "api/assertions",

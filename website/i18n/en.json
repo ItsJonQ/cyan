@@ -37,6 +37,10 @@
         "title": "Selectors",
         "sidebar_label": "Selectors"
       },
+      "api/traversing": {
+        "title": "Traversing",
+        "sidebar_label": "Traversing"
+      },
       "introduction/getting-started": {
         "title": "Getting Started",
         "sidebar_label": "Getting Started"
