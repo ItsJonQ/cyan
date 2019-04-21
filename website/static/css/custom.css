@@ -109,7 +109,7 @@ article a:not(.button):not(.anchor) {
 article a:not(.button):not(.anchor):hover {
   background: rgba(var(--brandColorRGB), 1);
   border-bottom: 2px solid var(--brandColor);
-  color: var(--linkColor);
+  color: var(--linkHoverColor);
 }
 
 .navBreadcrumb a,
@@ -474,6 +474,20 @@ header.postHeader:empty + article h1 {
 .toc .toggleNav ul li a:focus {
   color: var(--textColor);
   font-weight: var(--fontSizeNavGroups);
+}
+
+/**
+ * Article / Hash Link
+ */
+.hash-link {
+  border: none !important;
+  background: none !important;
+  opacity: 0.5;
+}
+
+.hash-link svg {
+  position: relative;
+  top: -3px;
 }
 
 /**
