@@ -9,7 +9,7 @@ hide_title: true
 
 Targeting DOM Elements from the main DOM element collection defined by a [selectors](./selectors) method like `cy.get()`. Cyan's traversal methods were designed to emulate [Cypress's commands](https://docs.cypress.io/api/api/table-of-contents.html).
 
-Cyan's traversal methods are **chainable** (similar to [jQuery](https://api.jquery.com/category/traversing/).
+Cyan's traversal methods are **chainable** (similar to [jQuery](https://api.jquery.com/category/traversing/)).
 
 #### Example
 
