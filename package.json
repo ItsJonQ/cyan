@@ -15,6 +15,7 @@
     "coverage": "nyc report --temp-directory=coverage --reporter=text-lcov | coveralls",
     "format": "zero format",
     "validate": "zero validate",
+    "start": "cd website; npm run start",
     "release": "zero release",
     "version": "npm run build",
     "precommit": "zero pre-commit"

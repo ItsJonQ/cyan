@@ -199,3 +199,4 @@ cy.get('ul > li')
 ## See Also
 
 - [Queries](./queries)
+- [Assertions](./assertions)

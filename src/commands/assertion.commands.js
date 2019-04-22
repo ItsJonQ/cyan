@@ -73,6 +73,7 @@ const commands = {
   isChecked,
   isDisabled,
   matches,
+  is: matches,
   toContain,
   toExist,
 }

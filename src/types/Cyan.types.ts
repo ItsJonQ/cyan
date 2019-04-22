@@ -227,6 +227,7 @@ export interface Cyan extends CyanEvents {
   /**
    * Check if the main DOM element matches a selector.
    *
+   * @alias is
    * @param {string} selector The selector to used for matching.
    * @returns {boolean} The result.
    *
@@ -234,6 +235,17 @@ export interface Cyan extends CyanEvents {
    * cy.get('input').matches('.input.is-main')
    */
   matches(): boolean
+
+  /**
+   * Check if the main DOM element matches a selector.
+   *
+   * @param {string} selector The selector to used for matching.
+   * @returns {boolean} The result.
+   *
+   * @example
+   * cy.get('input').is('.input.is-main')
+   */
+  is(): boolean
 
   //////////////////////////////////////////////////////////////////////////////
   // Debuggers

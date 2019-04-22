@@ -36,6 +36,7 @@ const siteConfig = {
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
 
+  docsSideNavCollapsible: true,
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     { doc: 'introduction/getting-started', label: 'Get Started' },
