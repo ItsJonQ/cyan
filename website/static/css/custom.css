@@ -555,7 +555,7 @@ ul.toc-headings > li {
   font-weight: bold;
 }
 
-.toc-headings::before {
+.onPageNav > .toc-headings::before {
   content: 'Contents';
   font-size: var(--fontSizeNavHeading);
   text-transform: uppercase;
