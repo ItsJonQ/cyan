@@ -18,16 +18,16 @@ This section's documentation breaks down Cyan's methods and features.
 
 ## Interaction
 
-- [Actions](./actions)
-- [Events](./events)
+- [Actions](./actions.md)
+- [Events](./events.md)
 
 ## Testing
 
 - [Assertions](./assertions.md)
-- [Debugging](./debugging)
-- [Getters](./getters)
+- [Debugging](./debugging.md)
+- [Getters](./getters.md)
 
 ## Mocking
 
-- [Promises](./mock-promises)
-- [Timers](./mock-timers)
+- [Promises](./mock-promises.md)
+- [Timers](./mock-timers.md)

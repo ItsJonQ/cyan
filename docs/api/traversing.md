@@ -7,7 +7,7 @@ hide_title: true
 
 # Traversing
 
-Targeting DOM Elements from the main DOM element collection defined by a [query](./query) method like `cy.get()`. Cyan's traversal methods were designed to emulate [Cypress's commands](https://docs.cypress.io/api/api/table-of-contents.html).
+Targeting DOM Elements from the main DOM element collection defined by a [query](./queries/md) method like `cy.get()`. Cyan's traversal methods were designed to emulate [Cypress's commands](https://docs.cypress.io/api/api/table-of-contents.html).
 
 Cyan's traversal methods are **chainable** (similar to [jQuery](https://api.jquery.com/category/traversing/)).
 
@@ -198,6 +198,6 @@ cy.get('ul > li')
 
 ## See Also
 
-- [Queries](./queries)
-- [Getters](./getters)
-- [Assertions](./assertions)
+- [Queries](./queries.md)
+- [Getters](./getters.md)
+- [Assertions](./assertions.md)

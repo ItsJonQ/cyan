@@ -19,7 +19,7 @@ Cyan can be installed into your project by running:
 npm install --save-dev @helpscout/cyan
 ```
 
-For additional details, check out our [installation](./installation) guides.
+For additional details, check out our [installation](./installation.md) guides.
 
 ## Basic Example
 

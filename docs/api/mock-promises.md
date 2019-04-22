@@ -270,5 +270,5 @@ test('My multi-promise test', () => {
 
 ## See Also
 
-- [Mock Timers](./mock-timers)
-- [Installation](../introduction/installation)
+- [Mock Timers](./mock-timers.md)
+- [Installation](../introduction/installation.md)

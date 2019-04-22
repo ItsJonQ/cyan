@@ -9,7 +9,7 @@ hide_title: true
 
 Cyan provides some enhancements to Jest's [Mock Timer](https://jestjs.io/docs/en/timer-mocks) methods.
 
-When used, any [action](./actions) or [event](./events) fired by Cyan will automatically [run all timers](https://jestjs.io/docs/en/timer-mocks#run-all-timers).
+When used, any [action](./actions.md) or [event](./events.md) fired by Cyan will automatically [run all timers](https://jestjs.io/docs/en/timer-mocks#run-all-timers).
 
 #### Example
 
@@ -65,7 +65,7 @@ test('should render after clicking button', () => {
 
 `Function(): void`
 
-Sets up Cyan's [actions](./actions) and [events](./events) to automatically run all timers when fired. Cyan's mock timers are automatically restored after each test, if Jest has been setup with [`setupTests()`](../introduction/installation#setup-with-jest).
+Sets up Cyan's [actions](./actions.md) and [events](./events.md) to automatically run all timers when fired. Cyan's mock timers are automatically restored after each test, if Jest has been setup with [`setupTests()`](../introduction/installation#setup-with-jest).
 
 #### Example
 
@@ -122,5 +122,5 @@ test('should render after clicking button', () => {
 
 ## See Also
 
-- [Mock Promises](./mock-promises)
-- [Installation](../introduction/installation)
+- [Mock Promises](./mock-promises.md)
+- [Installation](../introduction/installation.md)

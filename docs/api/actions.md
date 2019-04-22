@@ -35,7 +35,7 @@ cy.get('input[type=text]').clear()
 
 ## trigger
 
-Triggers an [Event](./events) for a DOM element.
+Triggers an [Event](./events.md) for a DOM element.
 
 #### Parameters
 
@@ -52,7 +52,7 @@ cy.get('textarea').trigger('focus')
 `Function(): void`
 
 Types characters/commands into a DOM element. Typically used for `<input />`.
-This method triggers `keyDown` and `keyUp` [events](./events).
+This method triggers `keyDown` and `keyUp` [events](./events.md).
 
 #### Parameters
 
@@ -78,4 +78,4 @@ cy.get('input[type=checkbox]').uncheck()
 
 ## See Also
 
-- [Events](./events)
+- [Events](./events.md)

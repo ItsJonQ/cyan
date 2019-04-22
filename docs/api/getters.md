@@ -165,6 +165,6 @@ test('should render with the correct text', () => {
 
 ## See Also
 
-- [Queries](./queries)
-- [Traversing](./traversing)
-- [Assertions](./assertions)
+- [Queries](./queries.md)
+- [Traversing](./traversing.md)
+- [Assertions](./assertions.md)

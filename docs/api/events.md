@@ -111,4 +111,4 @@ The following events can be triggered as methods with Cyan:
 
 ## See Also
 
-- [Actions](./actions)
+- [Actions](./actions.md)

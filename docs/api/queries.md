@@ -107,6 +107,6 @@ For more information, check out the complete `getByText` [documentation](https:/
 
 ## See Also
 
-- [Traversing](./traversing)
-- [Getters](./getters)
-- [Assertions](./assertions)
+- [Traversing](./traversing.md)
+- [Getters](./getters.md)
+- [Assertions](./assertions.md)

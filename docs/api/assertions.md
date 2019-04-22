@@ -193,6 +193,6 @@ test('should render a form with a className + data attr', () => {
 
 ## See Also
 
-- [Queries](./queries)
-- [Traversing](./traversing)
-- [Getters](./getters)
+- [Queries](./queries.md)
+- [Traversing](./traversing.md)
+- [Getters](./getters.md)
