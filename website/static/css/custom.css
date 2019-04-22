@@ -13,6 +13,7 @@
   --textColor: rgb(var(--textColorRGB));
   --textHoverColor: rgb(var(--textColorHoverRGB));
   --headingTextColor: rgb(var(--textColorRGB));
+  --sidebarBackgroundColor: #f8fafa;
 
   --borderColor: rgba(var(--textColorRGB), var(--borderContrast));
 
@@ -53,6 +54,7 @@ html {
 
 html.dark {
   --backgroundColorRGB: 30, 30, 30;
+  --sidebarBackgroundColor: rgb(20, 20, 20);
   --textColorRGB: 255, 255, 255;
   --textColorHoverRGB: 0, 0, 0;
   --linkHoverColor: rgba(0, 0, 0, 1);
@@ -486,6 +488,33 @@ header.postHeader:empty + article h1 {
   border-radius: 4px;
   font-size: var(--fontSizeCode);
   padding: 20px;
+}
+
+.docMainWrapper {
+  backface-visibility: hidden;
+}
+
+.docMainWrapper::after {
+  backface-visibility: hidden;
+  display: none;
+  content: '';
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: calc((100% - 1280px) / 2 + 260px);
+  height: 100%;
+}
+
+@media (min-width: 1024px) {
+  .docMainWrapper::after {
+    display: block;
+  }
+
+  .docsNavContainer,
+  .docMainWrapper::after {
+    background: var(--sidebarBackgroundColor);
+  }
 }
 
 /**
