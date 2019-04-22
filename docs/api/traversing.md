@@ -14,7 +14,7 @@ Cyan's traversal methods are **chainable** (similar to [jQuery](https://api.jque
 #### Example
 
 ```js
-test('Can render nested list item with a link, for non-active items', () => {
+test('Can render nested non-active item links', () => {
   // Rendering a sample list component.
   cy.render(<SomeListComponent activeIndex={3} />)
 

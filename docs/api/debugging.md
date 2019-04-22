@@ -9,6 +9,40 @@ hide_title: true
 
 Cyan has a couple of helpful APIs for debugging during test development.
 
+These methods are also available on the Cyan instance.
+
+#### Example
+
+```jsx
+const SampleComponent = () => (
+  <main>
+    <div className="sample-component">
+      <div>Hello</div>
+    </div>
+  </main>
+)
+
+test('My component can render', () => {
+  cy.render(<SampleComponent />)
+
+  // Debugging the selected DOM Element from cy.get()
+  cy.get('.sample-component').debug()
+  // The following is logged in your Jest test runner:
+  // <div className="sample-component">
+  //   <div>Hello</div>
+  // </div>
+
+  // Debugging the entire document.body
+  cy.debug()
+  // The following is logged in your Jest test runner:
+  // <main>
+  //   <div className="sample-component">
+  //     <div>Hello</div>
+  //   </div>
+  // </main>
+})
+```
+
 ## debug
 
 `Function(): void`

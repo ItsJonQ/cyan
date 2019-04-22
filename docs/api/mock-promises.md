@@ -267,3 +267,8 @@ test('My multi-promise test', () => {
   cy.runNextPromise()
 })
 ```
+
+## See Also
+
+- [Mock Timers](./mock-timers)
+- [Installation](../introduction/installation)
