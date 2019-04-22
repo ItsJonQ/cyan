@@ -7,6 +7,10 @@ hide_title: true
 
 # API Reference
 
+Cyan's API was heavily inspired by [Cypress](https://www.cypress.io/). In addition, Cyan adds a couple of enhancement to the testing experience within Jest.
+
+This section's documentation breaks down Cyan's methods and features.
+
 ## Selectors
 
 - [Queries](./queries.md)

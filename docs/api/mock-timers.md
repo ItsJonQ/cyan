@@ -11,7 +11,7 @@ Cyan provides some enhancements to Jest's [Mock Timer](https://jestjs.io/docs/en
 
 When used, any [action](./actions) or [event](./events) fired by Cyan will automatically [run all timers](https://jestjs.io/docs/en/timer-mocks#run-all-timers).
 
-##### Example
+#### Example
 
 Below is an out-of-the-box **Jest** example of how timers (e.g. `setTimeout`) can be handled.
 
@@ -67,7 +67,7 @@ test('should render after clicking button', () => {
 
 Sets up Cyan's [actions](./actions) and [events](./events) to automatically run all timers when fired. Cyan's mock timers are automatically restored after each test, if Jest has been setup with [`setupTests()`](../introduction/installation#setup-with-jest).
 
-##### Example
+#### Example
 
 ```jsx
 // __tests__/TimerBasedComponent.test.js
@@ -97,7 +97,7 @@ test('should render after clicking button', () => {
 
 Runs all [timers](https://jestjs.io/docs/en/jest-object#jestrunalltimers) and [immediates](https://jestjs.io/docs/en/jest-object#jestrunallimmediates) queued by Jest. This method does not require `cy.useFakeTimers()` to be used.
 
-##### Example
+#### Example
 
 ```jsx
 // __tests__/TimerBasedComponent.test.js
