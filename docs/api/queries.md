@@ -108,4 +108,5 @@ For more information, check out the complete `getByText` [documentation](https:/
 ## See Also
 
 - [Traversing](./traversing)
+- [Getters](./getters)
 - [Assertions](./assertions)

@@ -195,3 +195,4 @@ test('should render a form with a className + data attr', () => {
 
 - [Queries](./queries)
 - [Traversing](./traversing)
+- [Getters](./getters)

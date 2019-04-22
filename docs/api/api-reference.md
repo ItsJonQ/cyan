@@ -25,6 +25,7 @@ This section's documentation breaks down Cyan's methods and features.
 
 - [Assertions](./assertions.md)
 - [Debugging](./debugging)
+- [Getters](./getters)
 
 ## Mocking
 

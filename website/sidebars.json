@@ -8,6 +8,7 @@
       "api/api-reference",
       "api/queries",
       "api/traversing",
+      "api/getters",
       "api/actions",
       "api/events",
       "api/assertions",

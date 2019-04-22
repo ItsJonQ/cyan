@@ -25,6 +25,10 @@
         "title": "Events",
         "sidebar_label": "Events"
       },
+      "api/getters": {
+        "title": "Getters",
+        "sidebar_label": "Getters"
+      },
       "api/mock-promises": {
         "title": "Mock Promises",
         "sidebar_label": "Mock Promises"
