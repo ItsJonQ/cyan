@@ -527,6 +527,10 @@ header.postHeader:empty + article h1 {
   font-weight: var(--fontSizeNavGroups);
 }
 
+.collapsible .arrow {
+  transition: none;
+}
+
 /**
  * Article / Table of Contents
  */
