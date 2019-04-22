@@ -597,13 +597,15 @@ ul.toc-headings > li {
  * Article / Prev/Next
  */
 .docs-prevnext {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
 }
 
 .docs-prevnext .button {
   align-items: center;
   display: flex;
-  flex: 1;
+  flex: none;
   float: none;
   font-weight: normal;
   padding: 20px;
@@ -650,6 +652,10 @@ ul.toc-headings > li {
 @media (min-width: 768px) {
   .docs-prevnext {
     display: flex;
+    flex-direction: row;
+  }
+  .docs-prevnext .button {
+    flex: 1;
   }
   .docs-prevnext .button + .button {
     margin-left: 30px;
