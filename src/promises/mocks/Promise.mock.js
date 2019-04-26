@@ -36,9 +36,6 @@ function Promise(fn) {
 }
 
 function handle(self, deferred) {
-  while (self._state === 3) {
-    self = self._value
-  }
   if (self._state === 0) {
     self._deferreds.push(deferred)
     return
@@ -72,7 +69,6 @@ function resolve(self, newValue) {
     ) {
       let then = newValue.then
       if (newValue instanceof Promise) {
-        self._state = 3
         self._value = newValue
         finale(self)
         return
