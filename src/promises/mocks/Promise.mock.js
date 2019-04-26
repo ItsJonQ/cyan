@@ -69,6 +69,7 @@ function resolve(self, newValue) {
     ) {
       let then = newValue.then
       if (newValue instanceof Promise) {
+        self._state = 3
         self._value = newValue
         finale(self)
         return
