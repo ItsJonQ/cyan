@@ -6,7 +6,6 @@ const cleanUp = () => {
   if (root) {
     ReactDOM.unmountComponentAtNode(root)
   }
-  document.body.innerHTML = ''
 }
 
 export default cleanUp

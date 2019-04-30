@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { MemoryRouter as Router } from 'react-router'
 import { Provider } from 'react-redux'
 import cleanUp from './cleanUp'
+import domCleanUp from './domCleanUp'
 import debug from './debug'
 import { getStore } from './store'
 import { runAllTimers } from './timers'
@@ -18,7 +19,13 @@ export const wrapWithProvider = WrappedComponent => {
   )
 }
 
+const renderCleanUp = () => {
+  cleanUp()
+  domCleanUp()
+}
+
 const render = (WrappedComponent = null) => {
+  renderCleanUp()
   // Create the root node for ReactDOM to mount to
   const root = createRootNode()
   document.body.appendChild(root)
@@ -32,7 +39,7 @@ const render = (WrappedComponent = null) => {
     debug,
     html: debug,
     WrappedComponent,
-    cleanUp,
+    cleanUp: renderCleanUp,
   }
 }
 
