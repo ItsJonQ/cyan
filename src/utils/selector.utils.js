@@ -27,7 +27,7 @@ export const get = selector => {
   return []
 }
 
-export const getByCy = selector => get(`[data-cy=${selector}]`)
+export const getByCy = selector => get(`[data-cy="${selector}"]`)
 
 export const getByText = (text, node = document.body) => {
   return baseGetByText(node, text)

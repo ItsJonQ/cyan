@@ -35,6 +35,17 @@ describe('cy', () => {
       expect(cy.getByCy('hello').isTagName('aside')).toBe(true)
     })
 
+    test('Can get a DOM Node by data-cy with special characters inside', () => {
+      cy.render(
+        <main>
+          <section />
+          <aside data-cy="hello.you" />
+        </main>,
+      )
+
+      expect(cy.getByCy('hello.you').isTagName('aside')).toBe(true)
+    })
+
     test('Can get an DOM Node by data-cy by chaining', () => {
       cy.render(
         <main>
