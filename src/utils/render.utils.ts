@@ -8,3 +8,10 @@ export const createRootNode = () => {
 }
 
 export const getRootNode = () => document.querySelector(`#${ROOT_ID}`)
+
+export const getDocumentHTML = () => {
+  const root = getRootNode() as Element
+  const other = Array.from(document.body.children).filter(node => node !== root)
+
+  return root.innerHTML + other.map(node => node.outerHTML).join('')
+}

@@ -1,4 +1,5 @@
 import Cyan, { Selector, CySelector } from './Cyan.types'
+import RenderWrapper from './RenderWrapper.types'
 
 export type Cy = {
   /**
@@ -32,6 +33,25 @@ export type Cy = {
   getByText(text: string): Cyan
 
   /**
+   * Renders the Component into the DOM.
+   *
+   * @param {any} Component The Component to render.
+   * @returns {RenderWrapper} The RenderWrapper instance.
+   *
+   * @example
+   * cy.render(<div>Hello</div>)
+   */
+  render(component: any): RenderWrapper
+
+  /**
+   * Unmounts the rendered React component and resets the document.body.
+   *
+   * @example
+   * cy.cleanUp()
+   */
+  cleanUp(): void
+
+  /**
    * Logs the html of document.body.
    *
    * @example
@@ -46,16 +66,6 @@ export type Cy = {
    * cy.fastForward()
    */
   fastForward(): void
-
-  /**
-   * Renders a React component into the DOM.
-   *
-   * @param {ReactComponent} component The component to render into the document.
-   *
-   * @example
-   * cy.render(<div />)
-   */
-  render(component: any): void
 
   /**
    * Types characters/commands into the document.

@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { cy, setStoreState } from '../index'
+import { cy, setStoreState } from '../../index'
 
 describe('render/redux', () => {
   test('Can render a Redux connected component, without setup', () => {
