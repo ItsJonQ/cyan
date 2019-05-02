@@ -7,7 +7,9 @@ import {
   isString,
 } from './is.utils'
 
-export const get = selector => {
+export type CyNodeCollection = Array<any>
+
+export const get = (selector: any): CyNodeCollection => {
   if (isNodeCollection(selector)) {
     return Array.from(selector)
   }
@@ -27,8 +29,9 @@ export const get = selector => {
   return []
 }
 
-export const getByCy = selector => get(`[data-cy="${selector}"]`)
+export const getByCy = (selector: string): CyNodeCollection =>
+  get(`[data-cy="${selector}"]`)
 
-export const getByText = (text, node = document.body) => {
+export const getByText = (text: string, node = document.body): any => {
   return baseGetByText(node, text)
 }

@@ -1,4 +1,4 @@
-export interface CyanEvents {
+export interface CyanEventInterface {
   /**
    * Fires a copy event on the main DOM element.
    *
@@ -720,4 +720,4 @@ export interface CyanEvents {
   doubleClick(eventProps: any): void
 }
 
-export default CyanEvents
+export default CyanEventInterface

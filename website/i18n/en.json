@@ -45,6 +45,14 @@
         "title": "Traversing",
         "sidebar_label": "Traversing"
       },
+      "guides/getting-started": {
+        "title": "Getting Started",
+        "sidebar_label": "Getting Started"
+      },
+      "guides/simple-component": {
+        "title": "Simple Component",
+        "sidebar_label": "Simple Component"
+      },
       "introduction/getting-started": {
         "title": "Getting Started",
         "sidebar_label": "Getting Started"
@@ -61,6 +69,7 @@
     },
     "categories": {
       "Introduction": "Introduction",
+      "Guides": "Guides",
       "API": "API"
     }
   },

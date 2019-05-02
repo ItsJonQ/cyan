@@ -1,4 +1,4 @@
-const domCleanUp = () => {
+const domCleanUp = (): void => {
   document.body.innerHTML = ''
 }
 

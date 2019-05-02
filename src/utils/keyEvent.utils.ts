@@ -5,7 +5,7 @@ import { isDefined, isString } from './is.utils'
 
 export { default as keyCode } from 'keycode'
 
-export const simulateKeyEvent = (keyEvent, command, node) => {
+export const simulateKeyEvent = (keyEvent: string, command, node): void => {
   if (!isString(command)) return
 
   const commands = command.split(/{(.*?)}/)
@@ -23,7 +23,7 @@ export const simulateKeyEvent = (keyEvent, command, node) => {
     })
 }
 
-export const typeCommand = (command, node = document) => {
+export const typeCommand = (command: string, node = document): void => {
   simulateKeyEvent('keyDown', command, node)
   simulateKeyEvent('keyUp', command, node)
 }

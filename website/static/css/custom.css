@@ -602,6 +602,15 @@ ul.toc-headings > li {
   color: rgba(var(--textColorRGB), 0.6);
 }
 
+.onPageNav ul ul {
+  padding: 6px 0 0 12px;
+}
+
+.onPageNav ul ul li {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
 .onPageNav ul li {
   font-size: var(--fontSizeSideNav);
   margin-bottom: 5px;

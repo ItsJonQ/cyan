@@ -1,11 +1,19 @@
 import invariant from 'invariant'
 import commands from '../commands'
+import CyanInterface from '../types/Cyan.interface.types'
 import { get, getByText } from '../utils/selector.utils'
-import { addCommands } from '../utils/command.utils'
+import { withCommands } from '../utils/command.utils'
 
-export class Cyan {
-  constructor(el) {
-    this.get(el)
+interface Cyan extends CyanInterface {}
+
+class Cyan {
+  el: Array<any> = []
+  length: number = 0
+
+  constructor(el?: any) {
+    if (el) {
+      this.get(el)
+    }
   }
 
   // QuerySelectors
@@ -49,6 +57,6 @@ export class Cyan {
   }
 }
 
-addCommands(Cyan, commands)
+withCommands(commands)(Cyan)
 
 export default Cyan

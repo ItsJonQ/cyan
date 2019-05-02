@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom'
 import { getRootNode } from './utils/render.utils'
 
-const cleanUp = () => {
+const cleanUp = (): void => {
   const root = getRootNode()
   if (root) {
     ReactDOM.unmountComponentAtNode(root)

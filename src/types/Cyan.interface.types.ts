@@ -1,10 +1,10 @@
-import CyanEvents from './Cyan.event.types'
+import CyanEventInterface from './Cyan.event.interface.types'
 
 export type Selector = any
 export type CySelector = string
 export type StyleOrStyleProp = Object | string | number | null
 
-export interface Cyan extends CyanEvents {
+export interface CyanInterface extends CyanEventInterface {
   //////////////////////////////////////////////////////////////////////////////
   // Queries
   //////////////////////////////////////////////////////////////////////////////
@@ -17,7 +17,7 @@ export interface Cyan extends CyanEvents {
    * @example
    * cy.get('ul')
    */
-  get(selector: Selector): Cyan
+  get(selector: Selector): this
 
   /**
    * Get the DOM elements with a [data-cy] selector.
@@ -27,7 +27,7 @@ export interface Cyan extends CyanEvents {
    * @example
    * cy.getByCy('ul')
    */
-  getByCy(selector: CySelector): Cyan
+  getByCy(selector: CySelector): this
 
   /**
    * Get the DOM elements with a text match.
@@ -37,7 +37,7 @@ export interface Cyan extends CyanEvents {
    * @example
    * cy.getByText('Hello')
    */
-  getByText(text: string): Cyan
+  getByText(text: string): this
 
   /**
    * Get the DOM elements the main DOM element collection.
@@ -71,7 +71,7 @@ export interface Cyan extends CyanEvents {
    * @example
    * cy.get('input[type=checkbox]').check()
    */
-  check(): Cyan
+  check(): this
 
   /**
    * Clear the value of a DOM element. Typically used for `<input />`.
@@ -81,7 +81,7 @@ export interface Cyan extends CyanEvents {
    * @example
    * cy.get('input[type=text]').clear()
    */
-  clear(): Cyan
+  clear(): this
 
   /**
    * Triggers an Event for a DOM element.
@@ -92,7 +92,7 @@ export interface Cyan extends CyanEvents {
    * @example
    * cy.get('textarea').trigger('focus')
    */
-  trigger(event: string): Cyan
+  trigger(event: string): this
 
   /**
    * Types characters/commands into a DOM element. Typically used for `<input />`.
@@ -103,7 +103,7 @@ export interface Cyan extends CyanEvents {
    * @example
    * cy.get('input[type=text]').type('Hello')
    */
-  type(command: string): Cyan
+  type(command: string): this
 
   /**
    * Unchecks a DOM element. Typically used for `<input />`.
@@ -113,7 +113,7 @@ export interface Cyan extends CyanEvents {
    * @example
    * cy.get('input[type=checkbox]').uncheck()
    */
-  uncheck(): Cyan
+  uncheck(): this
 
   //////////////////////////////////////////////////////////////////////////////
   // Assertions
@@ -441,7 +441,7 @@ export interface Cyan extends CyanEvents {
    * @example
    * cy.get('ul').children()
    */
-  children(): Cyan
+  children(): this
 
   /**
    * Get the first closest DOM element with a matching selector from the main DOM element.
@@ -452,7 +452,7 @@ export interface Cyan extends CyanEvents {
    * @example
    * cy.get('div').closest('main')
    */
-  closest(): Cyan
+  closest(): this
 
   /**
    * Iterate through the main DOM elements.
@@ -465,7 +465,7 @@ export interface Cyan extends CyanEvents {
    *   node.classList.add(`item-${index}`)
    * })
    */
-  each(callback: (element: Element, index: number) => void): Cyan
+  each(callback: (element: Element, index: number) => void): this
 
   /**
    * Get a DOM element based on it's index number.
@@ -476,7 +476,7 @@ export interface Cyan extends CyanEvents {
    * @example
    * cy.get('ul > li').eq(2)
    */
-  eq(index: number): Cyan
+  eq(index: number): this
 
   /**
    * Get the DOM elements that match a specific selector.
@@ -487,7 +487,7 @@ export interface Cyan extends CyanEvents {
    * @example
    * cy.get('ul > li').filter('.item')
    */
-  filter(selector: string): Cyan
+  filter(selector: string): this
 
   /**
    * Get descendent DOM elements that match a specific selector.
@@ -498,7 +498,7 @@ export interface Cyan extends CyanEvents {
    * @example
    * cy.get('ul').find('li.item')
    */
-  find(selector: string): Cyan
+  find(selector: string): this
 
   /**
    * Get the first DOM element from the main DOM elements.
@@ -508,7 +508,7 @@ export interface Cyan extends CyanEvents {
    * @example
    * cy.get('ul > li').first()
    */
-  first(): Cyan
+  first(): this
 
   /**
    * Get the last DOM element from the main DOM elements.
@@ -518,7 +518,7 @@ export interface Cyan extends CyanEvents {
    * @example
    * cy.get('ul > li').last()
    */
-  last(): Cyan
+  last(): this
 
   /**
    * Get the next sibling DOM element from the main DOM element.
@@ -528,7 +528,7 @@ export interface Cyan extends CyanEvents {
    * @example
    * cy.get('ul > li').eq(3).next()
    */
-  next(): Cyan
+  next(): this
 
   /**
    * Filter DOM elements from the main DOM elements.
@@ -539,7 +539,7 @@ export interface Cyan extends CyanEvents {
    * @example
    * cy.get('ul > li').not('.item')
    */
-  not(selector: string): Cyan
+  not(selector: string): this
 
   /**
    * Get the parent DOM element from the main DOM element.
@@ -549,7 +549,7 @@ export interface Cyan extends CyanEvents {
    * @example
    * cy.get('li').parent()
    */
-  parent(): Cyan
+  parent(): this
 
   /**
    * Get the previous sibling DOM element from the main DOM element.
@@ -559,7 +559,7 @@ export interface Cyan extends CyanEvents {
    * @example
    * cy.get('ul > li').eq(3).prev()
    */
-  prev(): Cyan
+  prev(): this
 }
 
-export default Cyan
+export default CyanInterface

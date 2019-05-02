@@ -1,8 +1,10 @@
-export const addCommands = (baseClass, commandList) => {
+export const withCommands = commandList => baseClass => {
   const commands = Object.keys(commandList)
   commands.forEach(key => {
     baseClass.prototype[key] = commandList[key]
   })
+
+  return baseClass
 }
 
 export const combineCommands = commandList => {

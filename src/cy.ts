@@ -3,6 +3,7 @@ import Cyan from './cyan'
 import { get, getByCy, getByText } from './utils/selector.utils'
 import { typeCommand } from './utils/keyEvent.utils'
 import cleanUp from './cleanUp'
+import domCleanUp from './domCleanUp'
 import debug from './debug'
 import delay from './delay'
 import * as timerFunctions from './timers'
@@ -25,6 +26,7 @@ const cy: Cy = {
   },
   type: typeCommand,
   cleanUp,
+  domCleanUp,
   debug,
   delay,
   render,

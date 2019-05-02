@@ -4,6 +4,7 @@
       "introduction/getting-started",
       "introduction/installation"
     ],
+    "Guides": ["guides/getting-started", "guides/simple-component"],
     "API": [
       "api/api-reference",
       "api/queries",

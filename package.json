@@ -55,6 +55,7 @@
     "react-dom": "^16 || ^15"
   },
   "dependencies": {
+    "@types/react": "16.8.15",
     "deepmerge": "3.2.0",
     "delay": "4.2.0",
     "dom-testing-library": "^3.19.4",

@@ -1,8 +1,8 @@
 import { pretty } from '../utils/pretty.utils'
 
-function debug(...args) {
+function debug(options) {
   const node = this.__getNode('debug')
-  console.log(pretty(node.outerHTML), ...args)
+  console.log(pretty(node.outerHTML, options))
 }
 
 function html() {
