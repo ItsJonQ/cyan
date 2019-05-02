@@ -5,5 +5,6 @@ module.exports = Object.assign(jestConfig, {
     ...jestConfig.collectCoverageFrom,
     '!src/polyfills/**/*.{js,jsx,ts,tsx}',
     '!src/promises/mocks/**/*.{js,jsx,ts,tsx}',
+    '!src/mocks/**/*.{js,jsx,ts,tsx}',
   ],
 })
