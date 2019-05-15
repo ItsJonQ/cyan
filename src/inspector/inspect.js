@@ -1,3 +1,8 @@
+/**
+ * Keep this file as a .js file for now.
+ * TypeScript async/await conversion isn't correct for library consumption.
+ */
+
 /* global jasmine */
 import rimraf from 'rimraf'
 import path from 'path'

@@ -1,4 +1,5 @@
 import { setConfigState, shouldUseFakeTimers } from './configuration'
+import { runAllPromises } from './promises'
 
 export const useFakeTimers = () => {
   setConfigState({ useFakeTimers: true })
@@ -21,6 +22,7 @@ export const runAllTimers = () => {
 export const fastForward = () => {
   jest.runAllImmediates()
   jest.runAllTimers()
+  runAllPromises()
 }
 
 export const advanceTimersByTime = jest.advanceTimersByTime

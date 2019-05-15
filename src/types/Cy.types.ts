@@ -82,7 +82,7 @@ export type Cy = {
   debug(selector?: string, options?: any): void
 
   /**
-   * Runs all immediates, ticks, and timers.
+   * Runs all immediates, ticks, timers, and Mock Promises.
    *
    * @example
    * cy.fastForward()
@@ -117,6 +117,22 @@ export type Cy = {
    * cy.useFakeTimers()
    */
   useFakeTimers(): void
+
+  /**
+   * Runs only pending ticks and timers queued by Jest.
+   *
+   * @example
+   * cy.runOnlyPendingTimers()
+   */
+  runOnlyPendingTimers(): void
+
+  /**
+   * Runs all ticks and timers queued by Jest.
+   *
+   * @example
+   * cy.runAllTimers()
+   */
+  runAllTimers(): void
 
   /**
    * Mocks the global Promise. Ensures that all Promises process synchronously.
