@@ -173,7 +173,9 @@ export type Cy = {
 
   /**
    * Forces mock promises (set with cy.useFakePromises) to resolve.
+   *
    * @param {Function<any>} callback Optional. Used to adjust the resolve value.
+   *
    * @example
    * cy.forceAllPromisesToResolve(value => `${value} works!`)
    */
@@ -181,9 +183,22 @@ export type Cy = {
 
   /**
    * Forces mock promises (set with cy.useFakePromises) to reject.
+   *
    * @param {Function<any>} callback Optional. Used to adjust the reject value.
+   *
    * @example
    * cy.forceAllPromisesToReject(reason => `${reason} failed!`)
    */
   forceAllPromisesToReject(callback?: (reason: any) => any): void
+
+  /**
+   * EXPERIMENTAL FEATURE
+   * Launches the Cyan Inspector in your default browser, with a snapshot of
+   * the rendered HTML (and CSS). It is recommended that it is used with
+   * async/await.
+   *
+   * @example
+   * await cy.inspect()
+   */
+  inspect(): void
 }

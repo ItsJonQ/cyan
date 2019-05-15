@@ -15,4 +15,6 @@ export * from './store'
 export * from './promises'
 export * from './timers'
 
+export { getCSSFromDocument } from './utils/css.utils'
+
 export default cy

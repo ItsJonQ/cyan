@@ -6,6 +6,7 @@ import cleanUp from './cleanUp'
 import domCleanUp from './domCleanUp'
 import debug from './debug'
 import delay from './delay'
+import inspect from './inspector'
 import * as timerFunctions from './timers'
 import * as promiseFunctions from './promises'
 import render from './render'
@@ -29,6 +30,7 @@ const cy: Cy = {
   domCleanUp,
   debug,
   delay,
+  inspect,
   render,
   ...promiseFunctions,
   ...timerFunctions,

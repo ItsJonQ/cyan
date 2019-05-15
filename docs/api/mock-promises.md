@@ -259,7 +259,7 @@ test('My multi-promise test', () => {
   }
 
   // Make all of the following promises `.reject()`
-  cy.forceAllPromisesToResolve(reject)
+  cy.forceAllPromisesToReject(reject)
 
   cy.render(<FetchedComponent />)
 

@@ -6,5 +6,7 @@ module.exports = Object.assign(jestConfig, {
     '!src/polyfills/**/*.{js,jsx,ts,tsx}',
     '!src/promises/mocks/**/*.{js,jsx,ts,tsx}',
     '!src/mocks/**/*.{js,jsx,ts,tsx}',
+    '!src/inspector/**/*.{js,ts}',
+    '!src/utils/css.utils.{js,ts}',
   ],
 })
