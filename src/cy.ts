@@ -4,7 +4,7 @@ import { get, getByCy, getByText } from './utils/selector.utils'
 import { typeCommand } from './utils/keyEvent.utils'
 import cleanUp from './cleanUp'
 import domCleanUp from './domCleanUp'
-import debug from './debug'
+import { debug, debugByCy } from './debug'
 import delay from './delay'
 import inspect from './inspector'
 import * as timerFunctions from './timers'
@@ -29,6 +29,7 @@ const cy: Cy = {
   cleanUp,
   domCleanUp,
   debug,
+  debugByCy,
   delay,
   inspect,
   render,

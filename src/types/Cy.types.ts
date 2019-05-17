@@ -82,6 +82,17 @@ export type Cy = {
   debug(selector?: string, options?: any): void
 
   /**
+   * Logs the html of a DOM element matching a data-cy selector.
+   *
+   * @param {string} selector The data-cy selector.
+   * @param {Object} options Options for printing (js-beautify).
+   *
+   * @example
+   * cy.debugByCy('Button')
+   */
+  debugByCy(selector?: string, options?: any): void
+
+  /**
    * Runs all immediates, ticks, timers, and Mock Promises.
    *
    * @example

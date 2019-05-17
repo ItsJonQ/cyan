@@ -1,7 +1,7 @@
 import { pretty } from './utils/pretty.utils'
 import { getDocumentHTML } from './utils/render.utils'
 
-const debug = (selector?: string, options?: any) => {
+export const debug = (selector?: string, options?: any) => {
   let html = getDocumentHTML()
 
   if (selector) {
@@ -18,6 +18,14 @@ const debug = (selector?: string, options?: any) => {
     }
   }
   console.log(pretty(html, options))
+}
+
+export const debugByCy = (selector?: string, options?: any) => {
+  if (!selector) {
+    debug(selector, options)
+  } else {
+    debug(`[data-cy="${selector}"]`, options)
+  }
 }
 
 export default debug

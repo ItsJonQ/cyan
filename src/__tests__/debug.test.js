@@ -1,5 +1,5 @@
 import React from 'react'
-import debug from '../debug'
+import { debug, debugByCy } from '../debug'
 import { cy } from '../index'
 
 describe('debug', () => {
@@ -56,5 +56,38 @@ describe('debug', () => {
 
     expect(spy).toHaveBeenCalledWith('<main>\n  <p>Hello</p>\n</main>')
     expect(warnSpy).toHaveBeenCalled()
+  })
+})
+
+describe('debugByCy', () => {
+  let spy
+  let warnSpy
+
+  beforeEach(() => {
+    spy = jest.spyOn(global.console, 'log').mockImplementation(() => {})
+    warnSpy = jest.spyOn(global.console, 'warn').mockImplementation(() => {})
+  })
+
+  afterEach(() => {
+    spy.mockRestore()
+    warnSpy.mockRestore()
+  })
+
+  test('Logs HTML from a data-cy attribute', () => {
+    cy.render(
+      <main>
+        <span data-cy="Hello">Hi</span>
+      </main>,
+    )
+    debugByCy('Hello')
+
+    expect(spy).toHaveBeenCalledWith('<span data-cy="Hello">Hi</span>')
+  })
+
+  test('Logs document.body if no selector', () => {
+    cy.render(<span data-cy="Hello">Hi</span>)
+    debugByCy()
+
+    expect(spy).toHaveBeenCalledWith('<span data-cy="Hello">Hi</span>')
   })
 })

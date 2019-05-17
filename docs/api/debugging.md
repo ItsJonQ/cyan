@@ -45,7 +45,7 @@ test('My component can render', () => {
 
 ## debug
 
-`Function(): void`
+`Function(selector?: string): void`
 
 [Logs](https://developer.mozilla.org/en-US/docs/Web/API/Console/log) the rendered within for `document.body`.<br />
 No need to call `console.log`. The `debug()` method does this automatically!
@@ -61,6 +61,31 @@ test('My component can render', () => {
   cy.debug()
   // The following is logged in your Jest test runner:
   // <div class="sample-component"></div>
+})
+```
+
+## debugByCy
+
+`Function(selector?: string): void`
+
+[Logs](https://developer.mozilla.org/en-US/docs/Web/API/Console/log) the rendered from a matching `data-cy` selector.<br />
+No need to call `console.log`. The `debug()` method does this automatically!
+
+#### Example
+
+```jsx
+const SampleComponent = () => (
+  <div className="sample-component">
+    <div data-cy="InnerSampleComponent" />
+  </div>
+)
+
+test('My component can render', () => {
+  cy.render(<SampleComponent />)
+
+  cy.debugByCy('InnerSampleComponent')
+  // The following is logged in your Jest test runner:
+  // <div data-cy="InnerSampleComponent"></div>
 })
 ```
 
