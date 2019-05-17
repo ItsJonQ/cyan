@@ -57,7 +57,10 @@ function trigger(event) {
  */
 function type(value) {
   const node = this.__getNode('type', value)
+  this.change({ target: { value } })
+
   node.value = value
+
   typeCommand(value)
   return this
 }

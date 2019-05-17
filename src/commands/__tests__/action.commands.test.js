@@ -81,15 +81,14 @@ describe('commands/action', () => {
   })
 
   describe('type', () => {
-    test('Can enter a value', () => {
+    test('Triggers change on type', () => {
       const spy = jest.fn()
-
       cy.render(<input onChange={spy} />)
-      const node = cy.get('input')
 
+      const node = cy.get('input')
       node.type('Hello There!')
 
-      expect(node.value()).toBe('Hello There!')
+      expect(spy).toHaveBeenCalled()
     })
   })
 
