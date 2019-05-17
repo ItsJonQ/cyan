@@ -1,6 +1,6 @@
 {
   "name": "@helpscout/cyan",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "description": "Cypress-like Testing for React + JSDOM",
   "main": "dist/index.js",
   "private": false,
