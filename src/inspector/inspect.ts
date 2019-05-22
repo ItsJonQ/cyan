@@ -1,8 +1,3 @@
-/**
- * Keep this file as a .js file for now.
- * TypeScript async/await conversion isn't correct for library consumption.
- */
-
 /* global jasmine */
 import rimraf from 'rimraf'
 import path from 'path'
@@ -10,6 +5,8 @@ import { fork, spawn } from 'child_process'
 import goGadgetGo from './gadget'
 
 const baseDir = path.join(process.cwd(), '/.cyan')
+// Caching the native Promise implementation, in case it gets stubbed.
+const _Promise = Promise
 
 let cachedProcess
 
@@ -40,8 +37,8 @@ const cleanUp = () => {
   rimraf.sync(baseDir)
 }
 
-const inspector = async process => {
-  return new Promise(resolve => {
+const inspector = process => {
+  return new _Promise(resolve => {
     process.on('exit', () => {
       cleanUp()
       resolve()
@@ -55,7 +52,7 @@ export const openBrowser = () => {
   })
 }
 
-export const inspect = async () => {
+export const inspect = () => {
   jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000000
 
   if (cachedProcess && cachedProcess.exit) {
@@ -72,7 +69,7 @@ export const inspect = async () => {
 
   openBrowser()
 
-  return await inspector(brainProcess)
+  return inspector(brainProcess)
 }
 
 process.on('SIGINT', () => {
