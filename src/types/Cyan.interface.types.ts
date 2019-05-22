@@ -5,6 +5,15 @@ export type CySelector = string
 export type StyleOrStyleProp = Object | string | number | null
 
 export interface CyanInterface extends CyanEventInterface {
+  /**
+   * The number of matched DOM elements.
+   *
+   * @returns {number} The number of matched DOM elements.
+   *
+   * @example
+   * cy.get('li').length
+   */
+  length: number
   //////////////////////////////////////////////////////////////////////////////
   // Queries
   //////////////////////////////////////////////////////////////////////////////
