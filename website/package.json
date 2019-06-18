@@ -9,6 +9,8 @@
     "rename-version": "docusaurus-rename-version"
   },
   "devDependencies": {
-    "docusaurus": "1.11.1"
+    "docusaurus": "1.11.1",
+    "remarkable": ">=1.7.1",
+    "underscore.string": ">=3.3.5"
   }
 }
