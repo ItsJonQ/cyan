@@ -126,6 +126,22 @@ Get descendent DOM elements that match a specific selector.
 cy.get('ul').find('li.item')
 ```
 
+## findByCy
+
+`Function(selector: string): Cyan instance`
+
+Get descendent DOM elements that match a specific `data-cy` selector.
+
+#### Parameters
+
+- `selector` `{string}` A selector used for descendent matching.
+
+#### Example
+
+```javascript
+cy.get('ul').findByCy('Item')
+```
+
 ## first
 
 Get the first DOM element from the main DOM elements.

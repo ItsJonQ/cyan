@@ -157,6 +157,25 @@ describe('commands/selector', () => {
     })
   })
 
+  describe('findByCy', () => {
+    test('Can find matches', () => {
+      cy.render(
+        <ul>
+          <li className="list-item">One</li>
+          <li>Two</li>
+          <li className="list-item" data-cy="Item">
+            Three
+          </li>
+        </ul>,
+      )
+
+      const assert = cy.get('ul').findByCy('Item')
+
+      expect(assert.length).toBe(1)
+      expect(assert.first().text()).toBe('Three')
+    })
+  })
+
   describe('first', () => {
     test('Returns the first item', () => {
       cy.render(

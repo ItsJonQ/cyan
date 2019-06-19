@@ -510,6 +510,17 @@ export interface CyanInterface extends CyanEventInterface {
   find(selector: string): this
 
   /**
+   * Get descendent DOM elements that match a specific selector.
+   *
+   * @param {string} selector A selector used for descendent matching.
+   * @returns {Cyan} The Cyan instance.
+   *
+   * @example
+   * cy.get('ul').findByCy('Item')
+   */
+  findByCy(selector: string): this
+
+  /**
    * Get the first DOM element from the main DOM elements.
    *
    * @returns {Cyan} The Cyan instance.

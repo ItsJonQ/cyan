@@ -78,6 +78,22 @@ function filter(selector) {
  * @returns {Cyan} The Cyan instance.
  *
  * @example
+ * cy.get('ul').findByCy('Item')
+ */
+function findByCy(selector) {
+  const cySelector = `[data-cy="${selector}"]`
+  const node = this.__getNode('findByCy', cySelector)
+  this.get(node.querySelectorAll(cySelector))
+  return this
+}
+
+/**
+ * Get descendent DOM elements that match a specific data-cy selector.
+ *
+ * @param {string} selector A selector used for descendent matching.
+ * @returns {Cyan} The Cyan instance.
+ *
+ * @example
  * cy.get('ul').find('li.item')
  */
 function find(selector) {
@@ -175,6 +191,7 @@ const commands = {
   eq,
   filter,
   find,
+  findByCy,
   first,
   last,
   next,
