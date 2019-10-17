@@ -1,4 +1,4 @@
-const config = require('@helpscout/zero/prettier')
+const config = require('@itsjonq/zero/prettier')
 
 module.exports = {
   ...config,

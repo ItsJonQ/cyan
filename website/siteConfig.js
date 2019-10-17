@@ -31,7 +31,7 @@ const siteConfig = {
 
   // Used for publishing and more
   projectName: 'cyan',
-  organizationName: 'helpscout',
+  organizationName: 'itsjonq',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
@@ -108,7 +108,7 @@ const siteConfig = {
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
-  repoUrl: 'https://github.com/helpscout/cyan',
+  repoUrl: 'https://github.com/itsjonq/cyan',
 }
 
 module.exports = siteConfig

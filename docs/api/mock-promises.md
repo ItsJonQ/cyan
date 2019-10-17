@@ -43,7 +43,7 @@ In our test, we can set up mock Promises using `cy.useFakePromises()`, similar t
 ```jsx
 // __tests__/AsyncComponent.test.js
 import React from 'react'
-import { cy } from '@helpscout/cyan'
+import { cy } from '@itsjonq/cyan'
 import AsyncComponent from '../AsyncComponent'
 
 test('It can load', () => {

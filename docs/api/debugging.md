@@ -53,7 +53,9 @@ No need to call `console.log`. The `debug()` method does this automatically!
 #### Example
 
 ```jsx
-const SampleComponent = () => <div className="sample-component" />
+const SampleComponent = () => (
+  <div className="sample-component" />
+)
 
 test('My component can render', () => {
   cy.render(<SampleComponent />)
@@ -99,7 +101,9 @@ For debugging, we recommend you use [`debug()`](#debug).
 #### Example
 
 ```js
-const SampleComponent = () => <div className="sample-component" />
+const SampleComponent = () => (
+  <div className="sample-component" />
+)
 
 test('My component can render', () => {
   cy.render(<SampleComponent />)

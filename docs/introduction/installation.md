@@ -10,7 +10,7 @@ hide_title: true
 Cyan can be installed into your project by running:
 
 ```bash
-npm install --save-dev @helpscout/cyan
+npm install --save-dev @itsjonq/cyan
 ```
 
 This assumes you are using [npm](https://www.npmjs.com/) as your package manager.
@@ -21,7 +21,7 @@ In your project's test setup files (declared in [`setupFiles`](https://jestjs.io
 
 ```js
 // ./scripts/setupTests.js
-import { setupTests } from '@helpscout/cyan'
+import { setupTests } from '@itsjonq/cyan'
 
 // Setup Cyan for testing
 setupTests()
@@ -31,7 +31,7 @@ Alternatively, you can do the following if you prefer `require`:
 
 ```js
 // ./scripts/setupTests.js
-const { setupTests } = require('@helpscout/cyan')
+const { setupTests } = require('@itsjonq/cyan')
 
 // Setup Cyan for testing
 setupTests()

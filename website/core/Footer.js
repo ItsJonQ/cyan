@@ -40,14 +40,14 @@ class Footer extends React.Component {
           <div>
             <h5>More</h5>
             <div>
-              <a href="https://github.com/helpscout/cyan">GitHub</a>
+              <a href="https://github.com/itsjonq/cyan">GitHub</a>
             </div>
             <div>
               <a
                 className="github-button"
                 href={this.props.config.repoUrl}
                 data-icon="octicon-star"
-                data-count-href="/helpscout/cyan/stargazers"
+                data-count-href="/itsjonq/cyan/stargazers"
                 data-show-count="true"
                 data-count-aria-label="# stargazers on GitHub"
                 aria-label="Star this project on GitHub"
@@ -60,7 +60,7 @@ class Footer extends React.Component {
         <section className="copyright">
           Copyright © {new Date().getFullYear()}.{' '}
           <a href="https://jonquach.com/">Q</a> +{' '}
-          <a href="https://helpscout.com">Help Scout</a>.
+          <a href="https://itsjonq.com">Help Scout</a>.
         </section>
       </footer>
     )

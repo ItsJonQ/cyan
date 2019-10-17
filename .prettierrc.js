@@ -1,1 +1,1 @@
-module.exports = require('@helpscout/zero/prettier')
+module.exports = require('@itsjonq/zero/prettier')

@@ -34,6 +34,7 @@ export const setStoreState = (
     'Provide setStoreState with a valid state (Object).',
   )
   const state = deepmerge(getStoreState(), nextState)
+  // @ts-ignore
   const store = createStore(getStoreReducer(), state)
 
   setStore(store)

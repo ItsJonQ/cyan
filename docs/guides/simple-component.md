@@ -15,7 +15,9 @@ Here we have our very simple component called `SimpleComponent`:
 
 ```jsx
 // SimpleComponent.js
-const SimpleComponent = ({ title }) => <div title={title}>{title}</div>
+const SimpleComponent = ({ title }) => (
+  <div title={title}>{title}</div>
+)
 SimpleComponent.defaultProps = {
   title: 'Hello',
 }
@@ -32,7 +34,7 @@ First, we're going to import everything that we need. Other than `React` and the
 ```jsx
 // SimpleComponent.test.js
 import React from 'react'
-import { cy } from '@helpscout/cyan'
+import { cy } from '@itsjonq/cyan'
 import SimpleComponent from './SimpleComponent'
 ```
 
@@ -41,7 +43,7 @@ Let's set up our first test!
 ```jsx
 // SimpleComponent.test.js
 import React from 'react'
-import { cy } from '@helpscout/cyan'
+import { cy } from '@itsjonq/cyan'
 import SimpleComponent from './SimpleComponent'
 
 test('It should render', () => {
@@ -106,7 +108,7 @@ Below is our simple test using conventions from [Enzyme](https://airbnb.io/enzym
 ```jsx
 // SimpleComponent.test.js
 import React from 'react'
-import { cy } from '@helpscout/cyan'
+import { cy } from '@itsjonq/cyan'
 import SimpleComponent from './SimpleComponent'
 
 test('It should render', () => {
@@ -123,7 +125,7 @@ As an alternative, you can write your test like this:
 ```jsx
 // SimpleComponent.test.js
 import React from 'react'
-import { cy } from '@helpscout/cyan'
+import { cy } from '@itsjonq/cyan'
 import SimpleComponent from './SimpleComponent'
 
 test('It should render', () => {

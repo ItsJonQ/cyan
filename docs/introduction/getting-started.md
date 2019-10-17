@@ -16,7 +16,7 @@ Similar to testing workflows like [Enzyme](https://airbnb.io/enzyme/), Cyan runs
 Cyan can be installed into your project by running:
 
 ```bash
-npm install --save-dev @helpscout/cyan
+npm install --save-dev @itsjonq/cyan
 ```
 
 For additional details, check out our [installation](./installation.md) guides.
@@ -26,7 +26,7 @@ For additional details, check out our [installation](./installation.md) guides.
 ```jsx
 // __tests__/Sample.test.js
 import React from 'react'
-import { cy } from '@helpscout/cyan'
+import { cy } from '@itsjonq/cyan'
 
 /**
  * This is a very simple example component. Typically, your
@@ -71,7 +71,9 @@ describe('Sample', () => {
     // the text content containing the word "Not Ready".
     //
     // Not Ready hasn't loaded yet.
-    expect(cy.get('.sample-content').text()).toContain('Not Ready')
+    expect(cy.get('.sample-content').text()).toContain(
+      'Not Ready'
+    )
 
     // We're checking to make sure we have our Load button!
     expect(cy.get('button').exists()).toBeTruthy()
@@ -82,7 +84,9 @@ describe('Sample', () => {
     // Now we can test that our component renders a "Ready!"
     // "Ready!" has now replaced "Not Ready".
     expect(cy.get('.sample-content').text()).toContain('Ready!')
-    expect(cy.get('.sample-content').text()).not.toContain('Not Ready')
+    expect(cy.get('.sample-content').text()).not.toContain(
+      'Not Ready'
+    )
   })
 })
 ```

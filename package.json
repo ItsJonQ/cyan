@@ -1,5 +1,5 @@
 {
-  "name": "@helpscout/cyan",
+  "name": "@itsjonq/cyan",
   "version": "0.12.1",
   "description": "Cypress-like Testing for React + JSDOM",
   "main": "dist/index.js",
@@ -43,10 +43,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/helpscout/cyan.git"
+    "url": "git+https://github.com/itsjonq/cyan.git"
   },
   "bugs": {
-    "url": "https://github.com/helpscout/cyan/issues"
+    "url": "https://github.com/itsjonq/cyan/issues"
   },
   "license": "MIT",
   "publishConfig": {
@@ -71,8 +71,8 @@
     "rimraf": "2.6.3"
   },
   "devDependencies": {
+    "@itsjonq/zero": "^4.0.5",
     "@helpscout/hsds-react": "2.39.1",
-    "@helpscout/zero": "3.2.1",
     "@types/jest": "24.0.12",
     "cheerio": "^1.0.0-rc.3",
     "coveralls": "3.0.3",

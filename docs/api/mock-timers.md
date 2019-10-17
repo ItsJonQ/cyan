@@ -42,7 +42,7 @@ Here is the same example, but with **Cyan**:
 ```jsx
 // __tests__/TimerBasedComponent.test.js
 import React from 'react'
-import { cy } from '@helpscout/cyan'
+import { cy } from '@itsjonq/cyan'
 import TimerBasedComponent from '../TimerBasedComponent'
 
 // Initialize the mock timer method
@@ -72,7 +72,7 @@ Sets up Cyan's [actions](./actions.md) and [events](./events.md) to automaticall
 ```jsx
 // __tests__/TimerBasedComponent.test.js
 import React from 'react'
-import { cy } from '@helpscout/cyan'
+import { cy } from '@itsjonq/cyan'
 import TimerBasedComponent from '../TimerBasedComponent'
 
 // Initialize the mock timer methods
@@ -102,7 +102,7 @@ Runs all [timers](https://jestjs.io/docs/en/jest-object#jestrunalltimers) and [i
 ```jsx
 // __tests__/TimerBasedComponent.test.js
 import React from 'react'
-import { cy } from '@helpscout/cyan'
+import { cy } from '@itsjonq/cyan'
 import TimerBasedComponent from '../TimerBasedComponent'
 
 // Can be used with either Jest/Cyan useFakeTimers
