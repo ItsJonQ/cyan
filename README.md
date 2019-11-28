@@ -1,7 +1,7 @@
 # 🐱 Cyan
 
 [![Build Status](https://travis-ci.org/itsjonq/cyan.svg?branch=master)](https://travis-ci.org/itsjonq/cyan)
-[![Coverage Status](https://coveralls.io/repos/github/itsjonq/cyan/badge.svg?branch=master)](https://coveralls.io/github/itsjonq/cyan?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/ItsJonQ/cyan/badge.svg?branch=master)](https://coveralls.io/github/ItsJonQ/cyan?branch=master)
 [![npm version](https://badge.fury.io/js/%40itsjonq%2Fcyan.svg)](https://badge.fury.io/js/%40itsjonq%2Fcyan)
 
 > Cypress-like Testing for React + JSDOM
