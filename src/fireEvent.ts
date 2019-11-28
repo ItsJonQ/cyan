@@ -1,3 +1,3 @@
-import { fireEvent } from 'dom-testing-library/dist/events'
+import { fireEvent } from '@testing-library/dom';
 
-export default fireEvent
+export default fireEvent;

@@ -1,37 +1,37 @@
-import { getByText as baseGetByText } from 'dom-testing-library'
+import { getByText as baseGetByText } from '@testing-library/dom';
 import {
-  isArray,
-  isElement,
-  isNodeCollection,
-  isNode,
-  isString,
-} from './is.utils'
+	isArray,
+	isElement,
+	isNodeCollection,
+	isNode,
+	isString,
+} from './is.utils';
 
-export type CyNodeCollection = Array<any>
+export type CyNodeCollection = Array<any>;
 
 export const get = (selector: any): CyNodeCollection => {
-  if (isNodeCollection(selector)) {
-    return Array.from(selector)
-  }
+	if (isNodeCollection(selector)) {
+		return Array.from(selector);
+	}
 
-  if (isNode(selector) || isElement(selector)) {
-    return [selector]
-  }
+	if (isNode(selector) || isElement(selector)) {
+		return [selector];
+	}
 
-  if (isString(selector)) {
-    return Array.from(document.querySelectorAll(selector))
-  }
+	if (isString(selector)) {
+		return Array.from(document.querySelectorAll(selector));
+	}
 
-  if (isArray(selector)) {
-    return selector
-  }
+	if (isArray(selector)) {
+		return selector;
+	}
 
-  return []
-}
+	return [];
+};
 
 export const getByCy = (selector: string): CyNodeCollection =>
-  get(`[data-cy="${selector}"]`)
+	get(`[data-cy="${selector}"]`);
 
 export const getByText = (text: string, node = document.body): any => {
-  return baseGetByText(node, text)
-}
+	return baseGetByText(node, text);
+};

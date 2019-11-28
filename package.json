@@ -59,10 +59,10 @@
     "react-dom": "^16 || ^15"
   },
   "dependencies": {
+    "@testing-library/dom": "^6.10.1",
     "@types/react": "16.8.15",
     "deepmerge": "3.2.0",
     "delay": "4.2.0",
-    "dom-testing-library": "^3.19.4",
     "invariant": "2.2.4",
     "keycode": "^2.2.0",
     "pretty": "^2.0.0",
